@@ -1,0 +1,15 @@
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: App\Entity\User
+    from_email:
+        address: test@test.com
+        sender_name: test
+    registration:
+        confirmation:
+            enabled: true
+    resetting:
+        email:
+            from_email:
+                address:        resetting@example.com
+                sender_name:    Demo Resetting

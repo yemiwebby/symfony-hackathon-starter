@@ -1,0 +1,36 @@
+hwi_oauth:
+    # list of names of the firewalls in which this bundle is active, this setting MUST be set
+    firewall_names: [main]
+    fosub:
+        properties:
+            facebook: facebookId
+            google: googleId
+            auth0: username
+
+    # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           '%env(FB_ID)%'
+            client_secret:       '%env(FB_SECRET)%'
+            scope:               "email"
+            options:
+                #display: popup
+                auth_type: rerequest
+                csrf: true
+
+        google:
+            type: google
+            client_id:  '%env(GOOGLE_ID)%'
+            client_secret: '%env(GOOGLE_SECRET)%'
+            scope:
+
+
+        auth0:
+            type:                oauth2
+            class:               'App\Auth0ResourceOwner'
+            client_id:           "%env(AUTH0_CLIENT_ID)%"
+            client_secret:       "%env(AUTH0_CLIENT_SECRET)%"
+            base_url:            "https://%env(AUTH0_DOMAIN)%"
+            scope: "openid profile"
+

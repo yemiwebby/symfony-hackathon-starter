@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <p> This is a very nice one for now </p>
+
+    <div>
+        <div id="page-title">
+            <h1>
+                Login
+            </h1>
+        </div>
+
+        <ul id="social-connect">
+            <li>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook'}) }}">
+                    Connect with Facebook
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'google'}) }}" >
+                    Connect with Google
+                </a>
+            </li>
+
+
+            <li>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'auth0'}) }}" >
+                    Connect with Google
+                </a>
+            </li>
+
+            <li>
+                {% if app.user %}
+                    Welcome, {{ app.user.username }}!<br/>
+                    {{ dump(app.user) }}
+                    <a href="{{ url('secured') }}">Protected route</a>
+                    <a href="{{ logout_url("secured_area") }}">
+                        <button>Logout</button>
+                    </a>
+                {% else %}
+                    <h1>Symfony Auth0 Quickstart</h1>
+                    <a href="/connect/auth0"><button>Login</button></a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
