@@ -64,4 +64,14 @@ hwi_oauth:
             type:           linkedin
             client_id:      77u2s3kae5yihq
             client_secret:  2cOUyMzNzxkfpexy
-            scope:        
+            scope:
+
+        bitbucket:
+            type:           bitbucket2
+            client_id:      77u2s3kae5yihq
+            client_secret:  2cOUyMzNzxkfpexy
+
+        instagram:
+            type:           instagram
+            client_id:      599d8fb2e627407e84a46ac4dde4a91f
+            client_secret:  7fe2e21ffc0d478e889a62fdb9753b5b

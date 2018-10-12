@@ -20,6 +20,8 @@ security:
                   github: "/secured/login_github"
                   gitlab: "/secured/login_gitlab"
                   linkedin: "/secured/login_linkedin"
+                  bitbucket: "/secured/login_bitbucket"
+                  instagram: "/secured/login_instagram"
               login_path: fos_user_security_login
               failure_path: fos_user_security_login
 

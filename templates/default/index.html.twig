@@ -69,6 +69,13 @@
 
 
             <li>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'instagram'}) }}" >
+                    Connect with Instagram
+                </a>
+            </li>
+
+
+            <li>
                 {% if app.user %}
                     Welcome, {{ app.user.username }}!<br/>
                     {{ dump(app.user) }}

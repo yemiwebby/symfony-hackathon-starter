@@ -51,6 +51,12 @@ gitlab_login:
 linkedin_login:
     path: /secured/login_linkedin
 
+bitbucket_login:
+    path: /secured/login_bucket
+
+instagram_login:
+    path: /secured/login_instagram
+
 auth0_login:
     path:    /auth0/callback
 
