@@ -2,29 +2,61 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12 title_header">
+        <div class="col-md-12 title_header text-center">
             <h3> Login </h3>
+        </div>
+
+
+        <div class="col-md-12">
+
+            {% if error %}
+                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
+
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                {% endif %}
+
+                <div class="text-center mb-4">
+                    <h1 class="h3 mb-3 font-weight-normal">Symfony Hackathon Starter </h1>
+                </div>
+
+                <div class="form-label-group">
+                    <label for="username">{{ 'security.login.username'|trans }}</label>
+                    <input type="text" id="username" class="form-control" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+
+                    {#<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>#}
+                    {#<label for="inputEmail">Email address</label>#}
+                </div>
+
+
+
+                <div class="form-label-group">
+                    <input type="password" id="password"  name="_password" autocomplete="current-password" class="form-control" placeholder="Password" required>
+                    <label for="password">{{ 'security.login.password'|trans }}</label>
+                </div>
+
+
+                {#<label for="password">{{ 'security.login.password'|trans }}</label>#}
+                {#<input type="password" id="password" name="_password" required="required" autocomplete="current-password" />#}
+
+
+                <div class="checkbox mb-3">
+                    <label for="remember_me">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on"> {{ 'security.login.remember_me'|trans }}
+                    </label>
+                </div>
+
+                {#<input type="checkbox" id="remember_me" name="_remember_me" value="on" />#}
+                {#<label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>#}
+
+                <button type="submit" id="_submit" name="_submit" class="btn btn-lg btn-primary btn-block" type="submit">{{ 'security.login.submit'|trans }}</button>
+
+                {#<input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />#}
+            </form>
+
         </div>
     </div>
 </div>
-
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
-
-<form action="{{ path("fos_user_security_check") }}" method="post">
-    {% if csrf_token %}
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-    {% endif %}
-
-    <label for="username">{{ 'security.login.username'|trans }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
-
-    <label for="password">{{ 'security.login.password'|trans }}</label>
-    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
-
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
-
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
-</form>
