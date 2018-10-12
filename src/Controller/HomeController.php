@@ -26,4 +26,13 @@ class HomeController extends AbstractController
     {
         return $this->render('user/account.html.twig');
     }
+
+    /**
+     * @Route("/contact", name="contact")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function contactPage()
+    {
+        return $this->render('contact.html.twig');
+    }
 }
