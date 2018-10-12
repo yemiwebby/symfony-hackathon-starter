@@ -16,4 +16,14 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
+
+
+    /**
+     * @Route("/account", name="account")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function accountPage()
+    {
+        return $this->render('user/account.html.twig');
+    }
 }
