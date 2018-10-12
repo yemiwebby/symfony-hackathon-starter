@@ -8,67 +8,69 @@
 
         <div class="container">
             <div class="row">
-                <div>
+                <div class="col-md-12">
                     <h3> Profile Information </h3>
                 </div>
 
-                <form action="/account/profile" method="POST">
-                    <input type="hidden" name="_csrf" value="CRvQVgZaGZzkmYkBvHnHdOQT3RG+jSbeA4j30=">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="email">Email</label>
-                        <div class="col-md-7">
-                            <input class="form-control" type="email" name="email" id="email" value="yemiwebby@gmail.com" autocomplete="email">
+                <div class="col-md-12">
+                    <form action="#" method="POST">
+
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label font-weight-bold text-right" for="email">Email</label>
+                            <div class="col-md-7">
+                                <input class="form-control" type="email" name="email" id="email" value="yemiwebby@gmail.com" autocomplete="email">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="name">Name</label>
-                        <div class="col-md-7">
-                            <input class="form-control" type="text" name="name" id="name" autocomplete="name">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label font-weight-bold text-right" for="name">Name</label>
+                            <div class="col-md-7">
+                                <input class="form-control" type="text" name="name" id="name" autocomplete="name">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label font-weight-bold text-right">Gender</label>
-                        <div class="col-sm-6">
-                            <label class="radio col-sm-3">
-                                <input type="radio" name="gender" value="male" data-toggle="radio">
-                                <span>Male</span>
-                            </label>
-                            <label class="radio col-sm-3">
-                                <input type="radio" name="gender" value="female" data-toggle="radio">
-                                <span>Female</span>
-                            </label>
-                            <label class="radio col-sm-3">
-                                <input type="radio" name="gender" value="other" data-toggle="radio">
-                                <span>Other</span>
-                            </label>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label font-weight-bold text-right">Gender</label>
+                            <div class="col-sm-6">
+                                <label class="radio col-sm-3">
+                                    <input type="radio" name="gender" value="male" data-toggle="radio">
+                                    <span>Male</span>
+                                </label>
+                                <label class="radio col-sm-3">
+                                    <input type="radio" name="gender" value="female" data-toggle="radio">
+                                    <span>Female</span>
+                                </label>
+                                <label class="radio col-sm-3">
+                                    <input type="radio" name="gender" value="other" data-toggle="radio">
+                                    <span>Other</span>
+                                </label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="location">Location</label>
-                        <div class="col-md-7">
-                            <input class="form-control" type="text" name="location" id="location" autocomplete="">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label font-weight-bold text-right" for="location">Location</label>
+                            <div class="col-md-7">
+                                <input class="form-control" type="text" name="location" id="location" autocomplete="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="website">Website</label>
-                        <div class="col-md-7">
-                            <input class="form-control" type="text" name="website" id="website" autocomplete="url">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label font-weight-bold text-right" for="website">Website</label>
+                            <div class="col-md-7">
+                                <input class="form-control" type="text" name="website" id="website" autocomplete="url">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label font-weight-bold text-right">Gravatar</label>
-                        <div class="col-sm-4">
-                            <img class="profile" src="https://gravatar.com/avatar/76165a43d2a01c6402c10be5846d4fec?s=200&amp;d=retro" width="100" height="100">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label font-weight-bold text-right">Gravatar</label>
+                            <div class="col-sm-4">
+                                <img class="profile" src="https://gravatar.com/avatar/76165a43d2a01c6402c10be5846d4fec?s=200&amp;d=retro" width="100" height="100">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="offset-sm-3 col-md-7 pl-2">
-                            <button class="btn btn btn-primary" type="submit">
-                                <i class="fas fa-pencil-alt fa-sm"></i>Update Profile
-                            </button>
+                        <div class="form-group">
+                            <div class="offset-sm-3 col-md-7 pl-2">
+                                <button class="btn btn btn-primary" type="submit">
+                                    <i class="fas fa-pencil-alt fa-sm"></i>Update Profile
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
 
             <div class="row">
