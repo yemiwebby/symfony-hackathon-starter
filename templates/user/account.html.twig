@@ -74,61 +74,59 @@
             </div>
 
             <div class="row">
-                <div>
+
+                <div class="col-md-12">
                     <h3> Change Password </h3>
                 </div>
 
-                <form action="/account/password" method="POST">
-                    <input type="hidden" name="_csrf" value="CRvQVgZaGZzkmYkBvHnHdOQT3RG+jSbeA4j30=">
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="password">New Password</label>
-                        <div class="col-md-7">
-                            <input class="form-control" type="password" name="password" id="password" autocomplete="new-password" aria-autocomplete="list">
+                <div class="col-md-12">
+                    <form action="/account/password" method="POST">
+                        <input type="hidden" name="_csrf" value="CRvQVgZaGZzkmYkBvHnHdOQT3RG+jSbeA4j30=">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label font-weight-bold text-right" for="password">New Password</label>
+                            <div class="col-md-7">
+                                <input class="form-control" type="password" name="password" id="password" autocomplete="new-password" aria-autocomplete="list">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="confirmPassword">Confirm Password</label>
-                        <div class="col-md-7">
-                            <input class="form-control" type="password" name="confirmPassword" id="confirmPassword" autocomplete="new-password">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label font-weight-bold text-right" for="confirmPassword">Confirm Password</label>
+                            <div class="col-md-7">
+                                <input class="form-control" type="password" name="confirmPassword" id="confirmPassword" autocomplete="new-password">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="offset-sm-3 col-md-7 pl-2">
-                            <button class="btn btn-primary" type="submit"><i class="fas fa-lock fa-sm"></i>Change Password
-                            </button>
+                        <div class="form-group">
+                            <div class="offset-sm-3 col-md-7 pl-2">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-lock fa-sm"></i>Change Password
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
 
 
 
             <div class="row">
-                <div>
+                <div class="col-md-12">
                     <h3> Delete Account </h3>
                 </div>
 
-                <form action="/account/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete your account?');">
-                    <div class="form-group">
-                        <p class="offset-sm-3 col-md-7 pl-2">You can delete your account, but keep in mind this action is irreversible.</p>
-                        <input type="hidden" name="_csrf" value="CRvQVgZaGZzkmYkBvHnHdOQT3RG+jSbeA4j30=">
-                        <div class="offset-sm-3 col-md-7 pl-2">
-                            <button class="btn btn-danger" type="submit">
-                                <i class="fas fa-trash-alt fa-sm"></i>Delete my account
-                            </button>
+                <div class="col-md-12">
+                    <form action="/account/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete your account?');">
+                        <div class="form-group">
+                            <p class="offset-sm-3 col-md-7 pl-2">You can delete your account, but keep in mind this action is irreversible.</p>
+                            <input type="hidden" name="_csrf" value="CRvQVgZaGZzkmYkBvHnHdOQT3RG+jSbeA4j30=">
+                            <div class="offset-sm-3 col-md-7 pl-2">
+                                <button class="btn btn-danger" type="submit">
+                                    <i class="fas fa-trash-alt fa-sm"></i>Delete my account
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
-
-            </div>
-
-            <div class="row">
-
-                <div>
-                    <h3> Linked Account </h3>
+                    </form>
                 </div>
 
             </div>
+
         </div>
 
     </main>
