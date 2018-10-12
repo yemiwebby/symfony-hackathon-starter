@@ -1,0 +1,14 @@
+
+body {
+    font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529 !important;
+}
+
+.title_header {
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 0.5rem !important;
+    border-bottom: 1px solid #dee2e6;
+}
