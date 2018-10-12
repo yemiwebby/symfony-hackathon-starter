@@ -35,4 +35,13 @@ class HomeController extends AbstractController
     {
         return $this->render('contact.html.twig');
     }
+
+    /**
+     * @Route("/api", name="api")
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function apiPage()
+    {
+        return $this->render('home/api.html.twig');
+    }
 }
