@@ -18,6 +18,8 @@ security:
                   auth0: "/auth0/callback"
                   sensio: "/secured/login_sensio"
                   github: "/secured/login_github"
+                  gitlab: "/secured/login_gitlab"
+                  linkedin: "/secured/login_linkedin"
               login_path: fos_user_security_login
               failure_path: fos_user_security_login
 

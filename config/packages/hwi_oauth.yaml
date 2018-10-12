@@ -8,6 +8,8 @@ hwi_oauth:
             auth0: username
             sensio: username
             twitter: twitterId
+            github: username
+            gitlab: username
 
     # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
     resource_owners:
@@ -53,3 +55,13 @@ hwi_oauth:
             client_secret: bd6262a004978062863f415c7017a28be4c6d9e5
             scope:
 
+        gitlab:
+            type: gitlab
+            client_id: 7119e4d813a63bbb648725bb749cac4d2bd9620384eedf65dd8e779b89a4547e
+            client_secret: 7119e4d813a63bbb648725bb749cac4d2bd9620384eedf65dd8e779b89a4547e
+
+        linkedin:
+            type:           linkedin
+            client_id:      77u2s3kae5yihq
+            client_secret:  2cOUyMzNzxkfpexy
+            scope:        

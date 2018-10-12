@@ -55,6 +55,18 @@
                 </a>
             </li>
 
+            <li>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'gitlab'}) }}" >
+                    Connect with GitLab
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'linkedin'}) }}" >
+                    Connect with LinkedIn
+                </a>
+            </li>
+
 
             <li>
                 {% if app.user %}

@@ -45,7 +45,11 @@ sensio_connect_login:
 github_login:
     path: /secured/login_github
 
+gitlab_login:
+    path: /secured/login_gitlab
 
+linkedin_login:
+    path: /secured/login_linkedin
 
 auth0_login:
     path:    /auth0/callback
