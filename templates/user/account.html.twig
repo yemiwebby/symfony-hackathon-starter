@@ -3,59 +3,130 @@
 {% block title %} Account | Symfony Hackathon Starter {% endblock %}
 
 {% block body %}
+
     <main role="main" style="margin-top: 30px">
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron">
-            <div class="container">
-                <h1 class="display-3"> Symfony Hackathon Starter </h1>
-                <p>This is a boilerplate for Symfony web applications.
-                    It includes social authentication using some of the most popular social platform
-                    . Use it as a starting point to create something more unique
-                </p>
-                <p><a class="btn btn-primary btn-lg" href="https://github.com/yemiwebby/symfony-hackathon-starter" role="button" target="_blank">Learn more &raquo;</a></p>
-            </div>
-        </div>
 
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                <div>
+                    <h3> Profile Information </h3>
                 </div>
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
+
+                <form action="/account/profile" method="POST">
+                    <input type="hidden" name="_csrf" value="CRvQVgZaGZzkmYkBvHnHdOQT3RG+jSbeA4j30=">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="email">Email</label>
+                        <div class="col-md-7">
+                            <input class="form-control" type="email" name="email" id="email" value="yemiwebby@gmail.com" autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="name">Name</label>
+                        <div class="col-md-7">
+                            <input class="form-control" type="text" name="name" id="name" autocomplete="name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label font-weight-bold text-right">Gender</label>
+                        <div class="col-sm-6">
+                            <label class="radio col-sm-3">
+                                <input type="radio" name="gender" value="male" data-toggle="radio">
+                                <span>Male</span>
+                            </label>
+                            <label class="radio col-sm-3">
+                                <input type="radio" name="gender" value="female" data-toggle="radio">
+                                <span>Female</span>
+                            </label>
+                            <label class="radio col-sm-3">
+                                <input type="radio" name="gender" value="other" data-toggle="radio">
+                                <span>Other</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="location">Location</label>
+                        <div class="col-md-7">
+                            <input class="form-control" type="text" name="location" id="location" autocomplete="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="website">Website</label>
+                        <div class="col-md-7">
+                            <input class="form-control" type="text" name="website" id="website" autocomplete="url">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label font-weight-bold text-right">Gravatar</label>
+                        <div class="col-sm-4">
+                            <img class="profile" src="https://gravatar.com/avatar/76165a43d2a01c6402c10be5846d4fec?s=200&amp;d=retro" width="100" height="100">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="offset-sm-3 col-md-7 pl-2">
+                            <button class="btn btn btn-primary" type="submit">
+                                <i class="fas fa-pencil-alt fa-sm"></i>Update Profile
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
+
+            <div class="row">
+                <div>
+                    <h3> Change Password </h3>
+                </div>
+
+                <form action="/account/password" method="POST">
+                    <input type="hidden" name="_csrf" value="CRvQVgZaGZzkmYkBvHnHdOQT3RG+jSbeA4j30=">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="password">New Password</label>
+                        <div class="col-md-7">
+                            <input class="form-control" type="password" name="password" id="password" autocomplete="new-password" aria-autocomplete="list">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label font-weight-bold text-right" for="confirmPassword">Confirm Password</label>
+                        <div class="col-md-7">
+                            <input class="form-control" type="password" name="confirmPassword" id="confirmPassword" autocomplete="new-password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="offset-sm-3 col-md-7 pl-2">
+                            <button class="btn btn-primary" type="submit"><i class="fas fa-lock fa-sm"></i>Change Password
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
 
 
             <div class="row">
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                <div>
+                    <h3> Delete Account </h3>
                 </div>
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-                <div class="col-md-4">
-                    <h2>Heading</h2>
-                    <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
+
+                <form action="/account/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete your account?');">
+                    <div class="form-group">
+                        <p class="offset-sm-3 col-md-7 pl-2">You can delete your account, but keep in mind this action is irreversible.</p>
+                        <input type="hidden" name="_csrf" value="CRvQVgZaGZzkmYkBvHnHdOQT3RG+jSbeA4j30=">
+                        <div class="offset-sm-3 col-md-7 pl-2">
+                            <button class="btn btn-danger" type="submit">
+                                <i class="fas fa-trash-alt fa-sm"></i>Delete my account
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
             </div>
 
-            <hr>
+            <div class="row">
 
+                <div>
+                    <h3> Linked Account </h3>
+                </div>
+
+            </div>
         </div>
 
     </main>
