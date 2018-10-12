@@ -33,9 +33,28 @@
 
             <li>
                 <a href="{{ path('hwi_oauth_service_redirect', {'service': 'auth0'}) }}" >
-                    Connect with Google
+                    Connect with Auth0
                 </a>
             </li>
+
+            <li>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'sensio'}) }}" >
+                    Connect with SymfonyConnect
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'twitter'}) }}" >
+                    Connect with Twitter
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'github'}) }}" >
+                    Connect with GitHub
+                </a>
+            </li>
+
 
             <li>
                 {% if app.user %}

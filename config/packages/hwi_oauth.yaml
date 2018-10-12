@@ -6,6 +6,8 @@ hwi_oauth:
             facebook: facebookId
             google: googleId
             auth0: username
+            sensio: username
+            twitter: twitterId
 
     # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
     resource_owners:
@@ -33,4 +35,21 @@ hwi_oauth:
             client_secret:       "%env(AUTH0_CLIENT_SECRET)%"
             base_url:            "https://%env(AUTH0_DOMAIN)%"
             scope: "openid profile"
+
+        sensio:
+            type: sensio_connect
+            client_id:  "%env(SYMFONY_CONNECT_ID)%"
+            client_secret: "%env(SYMFONY_CONNECT_SECRET)%"
+            scope:  "SCOPE_EMAIL SCOPE_PUBLIC"
+
+        twitter:
+            type:                twitter
+            client_id:           242fcsd
+            client_secret:      sdcs2234
+
+        github:
+            type: github
+            client_id: 0f84f2ad6f915e8c1c17
+            client_secret: bd6262a004978062863f415c7017a28be4c6d9e5
+            scope:
 

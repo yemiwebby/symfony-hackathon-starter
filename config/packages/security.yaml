@@ -14,7 +14,10 @@ security:
               resource_owners:
                   facebook: "/secured/login_facebook"
                   google: "/secured/login_google"
+                  twitter: "/secured/login_twitter"
                   auth0: "/auth0/callback"
+                  sensio: "/secured/login_sensio"
+                  github: "/secured/login_github"
               login_path: fos_user_security_login
               failure_path: fos_user_security_login
 
