@@ -16,6 +16,17 @@ security:
             security: false
         main:
             pattern: ^/
+            form_login:
+               provider: fos_userbundle
+               login_path: fos_user_security_login
+               check_path: /login_check
+               csrf_token_generator: security.csrf.token_manager
+               remember_me: true
+
+            remember_me:
+               secret: thisisthesecretkey
+               lifetime: 604800
+               path: /
             oauth:
               resource_owners:
                   facebook: "/secured/login_facebook"
@@ -34,7 +45,9 @@ security:
               oauth_user_provider:
                   service: my.oauth_aware.user_provider.service
             anonymous: true
-            logout: true
+            logout:
+              path: fos_user_security_logout
+              target: /login
 
             # activate different ways to authenticate
 

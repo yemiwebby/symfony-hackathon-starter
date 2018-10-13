@@ -3,7 +3,7 @@ fos_user:
     firewall_name: main
     user_class: App\Entity\User
     from_email:
-        address: test@test.com
+        address: noreply@test.com
         sender_name: test
     registration:
         confirmation:
