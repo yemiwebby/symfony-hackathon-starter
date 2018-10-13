@@ -1,11 +1,28 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
-    <div>
-        <label for="username">{{ 'resetting.request.username'|trans }}</label>
-        <input type="text" id="username" name="username" required="required" />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 title_header text-center">
+            <h3> Change password </h3>
+        </div>
+
+        <div class="col-md-12">
+            <div class="text-center mb-4">
+                <h1 class="h3 mb-3 font-weight-normal">Symfony Hackathon Starter </h1>
+            </div>
+
+            <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request form-signin">
+                <div class="form-label-group">
+                    <input type="text" id="username" class="form-control" name="username" required="required" />
+                    <label for="username">{{ 'resetting.request.username'|trans }}</label>
+                </div>
+                <div class="form-label-group">
+                    <button type="submit" id="_submit" name="_submit" class="btn btn-lg btn-primary btn-block" type="submit">{{ 'resetting.request.submit'|trans }}</button>
+                </div>
+            </form>
+
+
+        </div>
     </div>
-    <div>
-        <input type="submit" value="{{ 'resetting.request.submit'|trans }}" />
-    </div>
-</form>
+</div>
