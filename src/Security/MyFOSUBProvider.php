@@ -27,7 +27,7 @@ class MyFOSUBProvider extends FOSUBUserProvider
 
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
-        dd($response);
+//        dd($response);
         $username = $response->getUsername();
         $property = $this->getProperty($response);
 
