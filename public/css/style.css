@@ -82,6 +82,10 @@ body {
     color: #777;
 }
 
+.social-wrapper {
+    margin-top: 30px;
+}
+
 footer {
     position: absolute;
     bottom: 0;
