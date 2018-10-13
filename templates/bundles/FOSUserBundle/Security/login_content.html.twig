@@ -46,6 +46,107 @@
                 </div>
 
                 <button type="submit" id="_submit" name="_submit" class="btn btn-lg btn-primary btn-block" type="submit">{{ 'security.login.submit'|trans }}</button>
+
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <a class="btn btn-block btn-facebook btn-social" href="/auth/facebook">
+                            <i class="fa fa-facebook-f fa-sm"></i>Sign in with Facebook
+                        </a>
+
+                        <a class="btn btn-block btn-twitter btn-social" href="/auth/twitter">
+                            <i class="fa fa-twitter fa-sm"></i>Sign in with Twitter
+                        </a>
+
+                        <a class="btn btn-block btn-google btn-social" href="/auth/google">
+                            <i class="fa fa-google-plus-g fa-xs"></i>Sign in with Google
+                        </a>
+
+                        <a class="btn btn-block btn-github btn-social" href="/auth/github">
+                            <i class="fa fa-github fa-sm"></i>Sign in with GitHub
+                        </a>
+
+                        <a class="btn btn-block btn-linkedin btn-social" href="/auth/linkedin">
+                            <i class="fa fa-linkedin-in fa-sm"></i>Sign in with LinkedIn
+                        </a>
+
+                        <a class="btn btn-block btn-instagram btn-social" href="/auth/instagram">
+                            <i class="fa fa-instagram fa-sm"></i>Sign in with Instagram
+                        </a>
+
+
+                        <ul id="social-connect">
+                            <li>
+                                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook'}) }}">
+                                    Connect with Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'google'}) }}" >
+                                    Connect with Google
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'auth0'}) }}" >
+                                    Connect with Auth0
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'sensio'}) }}" >
+                                    Connect with SymfonyConnect
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'twitter'}) }}" >
+                                    Connect with Twitter
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'github'}) }}" >
+                                    Connect with GitHub
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'gitlab'}) }}" >
+                                    Connect with GitLab
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'linkedin'}) }}" >
+                                    Connect with LinkedIn
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a href="{{ path('hwi_oauth_service_redirect', {'service': 'instagram'}) }}" >
+                                    Connect with Instagram
+                                </a>
+                            </li>
+
+
+                            <li>
+                                {% if app.user %}
+                                    Welcome, {{ app.user.username }}!<br/>
+                                    {{ dump(app.user) }}
+                                    <a href="{{ url('secured') }}">Protected route</a>
+                                    <a href="{{ logout_url("secured_area") }}">
+                                        <button>Logout</button>
+                                    </a>
+                                {% else %}
+                                    <h1>Symfony Auth0 Quickstart</h1>
+                                    <a href="/connect/auth0"><button>Login</button></a>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </form>
 
         </div>
