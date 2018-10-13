@@ -8,11 +8,16 @@
 
         <div class="col-md-12">
 
-            {% if error %}
-                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-            {% endif %}
-
             <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
+
+
+                {% if error %}
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Error!</strong> {{ error.messageKey|trans(error.messageData, 'security') }}
+                    </div>
+                    <div></div>
+                {% endif %}
 
                 {% if csrf_token %}
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
