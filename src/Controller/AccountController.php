@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 
+use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -44,6 +45,10 @@ class AccountController extends AbstractController
      */
     public function updateAccount(Request $request)
     {
+        $user = $this->userRepository->find($this->getUser()->getId());
+
+        $this->updateUser($request, $user);
+
         $this->addFlash('notice', 'Your account has been updated successfully');
         return $this->redirectToRoute('account');
     }
@@ -64,6 +69,16 @@ class AccountController extends AbstractController
         return $this->redirect('/');
     }
 
+    function updateUser(Request $request, User $user) {
+
+        $user->setEmail($request->get('email'));
+        $user->setFirstName($request->get('first_name'));
+        $user->setLastName($request->get('last_name'));
+        $user->setLocation($request->get('location'));
+        $user->setWebsite($request->get('website'));
+        $this->persistObject($user);
+
+    }
 
     function persistObject($object) {
         $this->entityManager->persist($object);

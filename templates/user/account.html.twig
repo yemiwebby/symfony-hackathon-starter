@@ -14,14 +14,14 @@
                     {% for message in app.flashes('notice') %}
                         <div class="alert alert-success alert-dismissible" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <strong>Error!</strong>  {{ message }}
+                            <strong>Success!</strong>  {{ message }}
                         </div>
                     {% endfor %}
 
                 </div>
 
                 <div class="col-md-12">
-                    <form action="#" method="POST">
+                    <form action="{{ url('profile_update') }}" method="POST">
 
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label font-weight-bold text-right" for="email">Email</label>
@@ -48,13 +48,13 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label font-weight-bold text-right" for="location">Location</label>
                             <div class="col-md-7">
-                                <input class="form-control" type="text" name="location" id="location" autocomplete="">
+                                <input class="form-control" type="text" value="{{ app.user.getLocation() }}" name="location" id="location" autocomplete="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label font-weight-bold text-right" for="website">Website</label>
                             <div class="col-md-7">
-                                <input class="form-control" type="text" name="website" id="website" autocomplete="url">
+                                <input class="form-control" type="text" value="{{ app.user.getWebsite() }}" name="website" id="website" autocomplete="url">
                             </div>
                         </div>
                         <div class="form-group row">
