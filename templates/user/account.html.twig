@@ -10,6 +10,14 @@
             <div class="row">
                 <div class="col-md-12 title_header">
                     <h3> Profile Information </h3>
+
+                    {% for message in app.flashes('notice') %}
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Error!</strong>  {{ message }}
+                        </div>
+                    {% endfor %}
+
                 </div>
 
                 <div class="col-md-12">

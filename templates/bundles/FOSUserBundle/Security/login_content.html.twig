@@ -16,7 +16,6 @@
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <strong>Error!</strong> {{ error.messageKey|trans(error.messageData, 'security') }}
                     </div>
-                    <div></div>
                 {% endif %}
 
                 {% if csrf_token %}
