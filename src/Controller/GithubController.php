@@ -12,7 +12,7 @@ class GithubController extends AbstractController
      */
     public function index()
     {
-        return $this->render('github/index.html.twig', [
+        return $this->render('api/github/index.html.twig', [
             'controller_name' => 'GithubController',
         ]);
     }

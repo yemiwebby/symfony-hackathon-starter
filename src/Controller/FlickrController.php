@@ -12,7 +12,7 @@ class FlickrController extends AbstractController
      */
     public function index()
     {
-        return $this->render('flickr/index.html.twig', [
+        return $this->render('api/flickr/index.html.twig', [
             'controller_name' => 'FlickrController',
         ]);
     }

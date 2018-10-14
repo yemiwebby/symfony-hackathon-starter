@@ -12,7 +12,7 @@ class SlackController extends AbstractController
      */
     public function index()
     {
-        return $this->render('slack/index.html.twig', [
+        return $this->render('api/slack/index.html.twig', [
             'controller_name' => 'SlackController',
         ]);
     }

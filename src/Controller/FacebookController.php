@@ -12,7 +12,7 @@ class FacebookController extends AbstractController
      */
     public function index()
     {
-        return $this->render('facebook/index.html.twig', [
+        return $this->render('api/facebook/index.html.twig', [
             'controller_name' => 'FacebookController',
         ]);
     }

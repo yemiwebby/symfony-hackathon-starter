@@ -12,7 +12,7 @@ class YahooController extends AbstractController
      */
     public function index()
     {
-        return $this->render('yahoo/index.html.twig', [
+        return $this->render('api/yahoo/index.html.twig', [
             'controller_name' => 'YahooController',
         ]);
     }

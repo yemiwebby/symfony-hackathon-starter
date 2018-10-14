@@ -12,7 +12,7 @@ class SpotifyController extends AbstractController
      */
     public function index()
     {
-        return $this->render('spotify/index.html.twig', [
+        return $this->render('api/spotify/index.html.twig', [
             'controller_name' => 'SpotifyController',
         ]);
     }

@@ -12,7 +12,7 @@ class TwitterController extends AbstractController
      */
     public function index()
     {
-        return $this->render('twitter/index.html.twig', [
+        return $this->render('api/twitter/index.html.twig', [
             'controller_name' => 'TwitterController',
         ]);
     }

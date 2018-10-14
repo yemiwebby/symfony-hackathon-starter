@@ -12,7 +12,7 @@ class SoundcloudController extends AbstractController
      */
     public function index()
     {
-        return $this->render('soundcloud/index.html.twig', [
+        return $this->render('api/soundcloud/index.html.twig', [
             'controller_name' => 'SoundcloudController',
         ]);
     }

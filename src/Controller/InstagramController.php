@@ -12,7 +12,7 @@ class InstagramController extends AbstractController
      */
     public function index()
     {
-        return $this->render('instagram/index.html.twig', [
+        return $this->render('api/instagram/index.html.twig', [
             'controller_name' => 'InstagramController',
         ]);
     }

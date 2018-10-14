@@ -12,7 +12,7 @@ class DropboxController extends AbstractController
      */
     public function index()
     {
-        return $this->render('dropbox/index.html.twig', [
+        return $this->render('api/dropbox/index.html.twig', [
             'controller_name' => 'DropboxController',
         ]);
     }

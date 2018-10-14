@@ -12,7 +12,7 @@ class LinkedinController extends AbstractController
      */
     public function index()
     {
-        return $this->render('linkedin/index.html.twig', [
+        return $this->render('api/linkedin/index.html.twig', [
             'controller_name' => 'LinkedinController',
         ]);
     }

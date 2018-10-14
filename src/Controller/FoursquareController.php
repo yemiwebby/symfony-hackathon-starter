@@ -12,7 +12,7 @@ class FoursquareController extends AbstractController
      */
     public function index()
     {
-        return $this->render('foursquare/index.html.twig', [
+        return $this->render('api/foursquare/index.html.twig', [
             'controller_name' => 'FoursquareController',
         ]);
     }
