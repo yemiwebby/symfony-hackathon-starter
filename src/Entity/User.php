@@ -38,6 +38,8 @@ class User extends BaseUser
      */
     protected $phoneNumber;
 
+    
+
     /**
      * @ORM\Column(type="string", name="facebook_id", nullable=true)
      */

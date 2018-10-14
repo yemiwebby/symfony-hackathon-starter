@@ -37,7 +37,12 @@ class AccountController extends AbstractController
         $this->userRepository = $entityManager->getRepository('App:User');
     }
 
-    public function updateAccount()
+    /**
+     * @Route("/update/profile", name="profile_update")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function updateAccount(Request $request)
     {
         $this->addFlash('notice', 'Your account has been updated successfully');
         return $this->redirectToRoute('account');
