@@ -1,14 +1,35 @@
-{% trans_default_domain 'FOSUserBundle' %}a
+{% trans_default_domain 'FOSUserBundle' %}
+
 <div class="container">
     <div class="row">
-        <div class="col-md-12 title_header">
+        <div class="col-md-12 title_header text-center">
             <h3>Edit Profile </h3>
         </div>
 
         <div class="col-md-12">
 
+            <div class="text-center mb-4">
+                <h1 class="h3 mb-3 font-weight-normal">Symfony Hackathon Starter </h1>
+            </div>
+
+
             {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit form-signin' } }) }}
-            {{ form_widget(form) }}
+
+
+            <div class="form-label-group">
+                {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.username) }}
+            </div>
+
+            <div class="form-label-group">
+                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.email) }}
+            </div>
+
+            <div class="form-label-group">
+                {{ form_widget(form.current_password, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.current_password) }}
+            </div>
 
             <div class="form-label-group">
                 <button type="submit" id="_submit" name="_submit" class="btn btn-lg btn-primary btn-block" type="submit">{{ 'profile.edit.submit'|trans }}</button>
