@@ -4,12 +4,12 @@ fos_user:
     user_class: App\Entity\User
     from_email:
         address: noreply@test.com
-        sender_name: test
+        sender_name: Symfony-hackathon-starter
     registration:
         confirmation:
             enabled: true
     resetting:
         email:
             from_email:
-                address:        resetting@example.com
-                sender_name:    Demo Resetting
+                address:        resetting@test.com
+                sender_name:    Symfony-hackathon-starter
