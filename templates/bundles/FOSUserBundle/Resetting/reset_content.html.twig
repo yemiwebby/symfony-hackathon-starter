@@ -15,8 +15,13 @@
             {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset form-signin' } }) }}
 
             <div class="form-label-group">
-                {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
-                {{ form_label(form.email) }}
+                {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.plainPassword.first) }}
+            </div>
+
+            <div class="form-label-group">
+                {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+                {{ form_label(form.plainPassword.second) }}
             </div>
 
 
