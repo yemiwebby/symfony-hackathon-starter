@@ -89,6 +89,11 @@ class AccountController extends AbstractController
         return $this->redirect('/');
     }
 
+    /**
+     * Update users' profile
+     * @param Request $request
+     * @param User $user
+     */
     function updateUser(Request $request, User $user) {
 
         $user->setEmail($request->get('email'));
@@ -100,11 +105,19 @@ class AccountController extends AbstractController
 
     }
 
+    /**
+     * Update the database
+     * @param $object
+     */
     function persistObject($object) {
         $this->entityManager->persist($object);
         $this->entityManager->flush();
     }
 
+    /**
+     * Delete object from the database
+     * @param $object
+     */
     function removeObject($object) {
         $this->entityManager->remove($object);
         $this->entityManager->flush();
