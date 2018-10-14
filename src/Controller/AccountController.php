@@ -56,7 +56,7 @@ class AccountController extends AbstractController
         $session = new Session();
         $session->clear();
 
-        return $this->redirectToRoute('account');
+        return $this->redirect('/');
     }
 
 

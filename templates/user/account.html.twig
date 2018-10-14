@@ -119,7 +119,7 @@
                 </div>
 
                 <div class="col-md-12">
-                    <form action="#" method="POST" onsubmit="return confirm('Are you sure you want to delete your account?');">
+                    <form action="{{ url('delete_account') }}" method="POST" onsubmit="return confirm('Are you sure you want to delete your account?');">
                         <div class="form-group">
                             <p class="offset-sm-3 col-md-7 pl-2">You can delete your account, but keep in mind this action is irreversible.</p>
                             <div class="offset-sm-3 col-md-7 pl-2">
