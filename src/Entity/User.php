@@ -38,7 +38,15 @@ class User extends BaseUser
      */
     protected $phoneNumber;
 
-    
+    /**
+     * @ORM\Column(name="location", type="string", length=255, nullable=true)
+     */
+    protected $location;
+
+    /**
+     * @ORM\Column(name="website", type="string", length=255, nullable=true)
+     */
+    protected $website;
 
     /**
      * @ORM\Column(type="string", name="facebook_id", nullable=true)
@@ -131,6 +139,61 @@ class User extends BaseUser
         $this->phoneNumber = $phoneNumber;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUsername(): string
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string $username
+     */
+
+    /**
+     * @param string $username
+     * @return $this|BaseUser
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * @param mixed $location
+     */
+    public function setLocation($location): void
+    {
+        $this->location = $location;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWebsite()
+    {
+        return $this->website;
+    }
+
+    /**
+     * @param mixed $website
+     */
+    public function setWebsite($website): void
+    {
+        $this->website = $website;
     }
 
 }
