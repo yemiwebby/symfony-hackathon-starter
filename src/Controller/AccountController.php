@@ -11,6 +11,9 @@ namespace App\Controller;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\Routing\Annotation\Route;
 
 class AccountController extends AbstractController
 {
@@ -34,17 +37,32 @@ class AccountController extends AbstractController
         $this->userRepository = $entityManager->getRepository('App:User');
     }
 
-    public function deleteAccount()
+//    public function updateAccount()
+
+    /**
+     * @Route("/account/delete", name="delete-")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function deleteAccount(Request $request)
     {
+        $user = $this->userRepository->find($this->getUser()->getId());
+        $this->removeObject($user);
 
+        $session = new Session();
+        $session->clear();
+
+        return $this->redirectToRoute('account');
     }
 
 
-    function persistObject() {
-
+    function persistObject($object) {
+        $this->entityManager->persist($object);
+        $this->entityManager->flush();
     }
 
-    function removeObject() {
-
+    function removeObject($object) {
+        $this->entityManager->remove($object);
+        $this->entityManager->flush();
     }
 }
