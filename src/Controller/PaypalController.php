@@ -5,6 +5,11 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/api")
+ * Class PaypalController
+ * @package App\Controller
+ */
 class PaypalController extends AbstractController
 {
     /**

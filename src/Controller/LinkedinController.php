@@ -5,6 +5,11 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/api")
+ * Class LinkedinController
+ * @package App\Controller
+ */
 class LinkedinController extends AbstractController
 {
     /**

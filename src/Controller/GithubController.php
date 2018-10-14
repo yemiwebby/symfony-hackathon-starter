@@ -5,6 +5,11 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/api")
+ * Class GithubController
+ * @package App\Controller
+ */
 class GithubController extends AbstractController
 {
     /**

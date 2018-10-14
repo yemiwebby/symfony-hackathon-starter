@@ -5,6 +5,11 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/api")
+ * Class InstagramController
+ * @package App\Controller
+ */
 class InstagramController extends AbstractController
 {
     /**
