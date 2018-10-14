@@ -15,6 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AccountController extends AbstractController
 {
@@ -50,6 +51,25 @@ class AccountController extends AbstractController
         $this->updateUser($request, $user);
 
         $this->addFlash('notice', 'Your account has been updated successfully');
+        return $this->redirectToRoute('account');
+    }
+
+    /**
+     * @Route("/account/password", name="change_password")
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $encoder
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     *
+     */
+    public function changePassword(Request $request, UserPasswordEncoderInterface $encoder)
+    {
+        $user = $this->userRepository->find($this->getUser()->getId());
+        $encoded = $encoder->encodePassword($user, $request->get('password'));
+
+        $user->setPassword($encoded);
+        $this->persistObject($user);
+
+        $this->addFlash('password', 'Your password has been changed successfully');
         return $this->redirectToRoute('account');
     }
 

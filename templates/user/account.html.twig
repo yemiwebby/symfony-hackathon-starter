@@ -18,6 +18,13 @@
                         </div>
                     {% endfor %}
 
+                    {% for message in app.flashes('password') %}
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Success!</strong>  {{ message }}
+                        </div>
+                    {% endfor %}
+
                 </div>
 
                 <div class="col-md-12">
@@ -34,27 +41,27 @@
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label font-weight-bold text-right" for="first_name">First Name</label>
                             <div class="col-md-7">
-                                <input class="form-control" type="text" value="{{ app.user.getFirstName() }}" name="first_name" id="first_name" autocomplete="first_name">
+                                <input class="form-control" type="text" value="{{ app.user.getFirstName() }}" placeholder="Olususi" name="first_name" id="first_name" autocomplete="first_name">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label font-weight-bold text-right" for="last_name">Last Name</label>
                             <div class="col-md-7">
-                                <input class="form-control" type="text" value="{{ app.user.getLastName() }}" name="last_name" id="last_name" autocomplete="last_name">
+                                <input class="form-control" type="text" value="{{ app.user.getLastName() }}" placeholder="Oluyemi" name="last_name" id="last_name" autocomplete="last_name">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label font-weight-bold text-right" for="location">Location</label>
                             <div class="col-md-7">
-                                <input class="form-control" type="text" value="{{ app.user.getLocation() }}" name="location" id="location" autocomplete="">
+                                <input class="form-control" type="text" value="{{ app.user.getLocation() }}" placeholder="Lagos, Nigeria." name="location" id="location" autocomplete="">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label font-weight-bold text-right" for="website">Website</label>
                             <div class="col-md-7">
-                                <input class="form-control" type="text" value="{{ app.user.getWebsite() }}" name="website" id="website" autocomplete="url">
+                                <input class="form-control" type="text" value="{{ app.user.getWebsite() }}" placeholder="https://yemiwebby.com.ng" name="website" id="website" autocomplete="url">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -81,7 +88,7 @@
                 </div>
 
                 <div class="col-md-12">
-                    <form action="#" method="POST">
+                    <form action="{{ url('change_password') }}" method="POST">
                         <div class="form-group row">
                             <label class="col-md-3 col-form-label font-weight-bold text-right" for="password">New Password</label>
                             <div class="col-md-7">

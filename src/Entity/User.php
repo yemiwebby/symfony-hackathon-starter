@@ -142,29 +142,6 @@ class User extends BaseUser
     }
 
     /**
-     * @return string
-     */
-    public function getUsername(): string
-    {
-        return $this->username;
-    }
-
-    /**
-     * @param string $username
-     */
-
-    /**
-     * @param string $username
-     * @return $this|BaseUser
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    /**
      * @return mixed
      */
     public function getLocation()
