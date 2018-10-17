@@ -7,7 +7,6 @@ hwi_oauth:
             google: googleId
             auth0: username
             sensio: username
-            twitter: twitterId
             github: username
             gitlab: username
 
@@ -43,11 +42,6 @@ hwi_oauth:
             client_id:  "%env(SYMFONY_CONNECT_ID)%"
             client_secret: "%env(SYMFONY_CONNECT_SECRET)%"
             scope:  "SCOPE_EMAIL SCOPE_PUBLIC"
-
-        twitter:
-            type: twitter
-            client_id: M69UWvN19FCg8ho1nivfXWvli
-            client_secret: bcLv5W3aEQq6RgTfMtaR8Sjkb7pmOheYFlJPT0vTc5r2Xv12d4
 
         github:
             type: github

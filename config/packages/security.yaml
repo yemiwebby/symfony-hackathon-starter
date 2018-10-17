@@ -31,7 +31,6 @@ security:
               resource_owners:
                   facebook: "/secured/login_facebook"
                   google: "/secured/login_google"
-                  twitter: "/secured/login_twitter"
                   auth0: "/auth0/callback"
                   sensio: "/secured/login_sensio"
                   github: "/secured/login_github"
@@ -68,6 +67,5 @@ security:
          - { path: ^/account, roles: ROLE_USER }
          - { path: /api/facebook, roles: ROLE_USER }
          - { path: /api/github, roles: ROLE_USER }
-         - { path: /api/twitter, roles: ROLE_USER }
          - { path: /api/linkedin, roles: ROLE_USER }
          - { path: /api/instagram, roles: ROLE_USER }
