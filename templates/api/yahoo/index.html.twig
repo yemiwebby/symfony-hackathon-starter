@@ -1,20 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="main-container">
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="page-header">
+        <h2><i style="color: #7b0099" class="fa fa-yahoo"></i>Yahoo API</h2>
+    </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/YahooController.php'|file_link(0) }}">src/Controller/YahooController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/yahoo/index.html.twig'|file_link(0) }}">templates/yahoo/index.html.twig</a></code></li>
-    </ul>
+    {#<div class="btn-group btn-group-justified">#}
+    <div class="btn-group d-flex" role="group">
+
+        <a href="https://developer.yahoo.com/yql/" target="_blank" class="btn btn-primary w-100">
+            <i class="fa fa-check-square-o"></i> YQL Getting Started
+        </a>
+        <a href="https://developer.yahoo.com/everything.html" target="_blank" class="btn btn-primary w-100">
+            <i class="fa fa-code"></i> Yahoo APIs
+        </a>
+    </div>
+
+    <br>
+
+    <p class="lead">Weather for ZIP Code:<strong> 10007</strong></p>
+
+    <div class="alert alert-info">
+        <p>It is currently<strong>
+            </strong> degrees in<strong> New York, NY</strong>.</p>
+    </div>
+
+    <h3>YQL Query</h3>
+
+    <pre>SELECT * FROM weather.forecast WHERE (location = 10007)</pre>
+
 </div>
 {% endblock %}
