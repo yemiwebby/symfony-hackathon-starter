@@ -45,9 +45,9 @@ hwi_oauth:
             scope:  "SCOPE_EMAIL SCOPE_PUBLIC"
 
         twitter:
-            type:                twitter
-            client_id:           242fcsd
-            client_secret:      sdcs2234
+            type: twitter
+            client_id: M69UWvN19FCg8ho1nivfXWvli
+            client_secret: bcLv5W3aEQq6RgTfMtaR8Sjkb7pmOheYFlJPT0vTc5r2Xv12d4
 
         github:
             type: github

@@ -27,7 +27,7 @@ class MyFOSUBProvider extends FOSUBUserProvider
 
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
-//        dd($response);
+        dd($response);
         $username = $response->getUsername();
         $property = $this->getProperty($response);
 
@@ -55,7 +55,7 @@ class MyFOSUBProvider extends FOSUBUserProvider
         if (null === $user || null === $username) {
             /** @var User $user */
             $user = $this->userManager->createUser();
-            $nick = "johndoe"; // to be changed
+            $nick = "johndoe";
 
             $user->setLastLogin(new \DateTime());
             $user->setEnabled(true);
