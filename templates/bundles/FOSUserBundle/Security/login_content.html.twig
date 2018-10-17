@@ -59,6 +59,10 @@
                             <i class="fa fa-facebook-f fa-sm"></i>Connect with Facebook
                         </a>
 
+                        <a class="btn btn-block btn-twitter btn-social" href="{{ path('hwi_oauth_service_redirect', {'service': 'twitter'}) }}">
+                            <i class="fa fa-twitter fa-sm"></i>Connect with Twitter
+                        </a>
+
                         <a class="btn btn-block btn-google btn-social" href="{{ path('hwi_oauth_service_redirect', {'service': 'google'}) }}">
                             <i class="fa fa-google-plus-g fa-xs"></i>Connect in with Google
                         </a>
@@ -84,9 +88,6 @@
                             <i class="fa fa-gitlab fa-sm"></i>Connect with GitLab
                         </a>
 
-                        <a class="btn btn-block btn-gitlab btn-social" href="{{ path('hwi_oauth_service_redirect', {'service': 'sensio'}) }}">
-                            <i class="fa fa-symfony fa-sm"></i>Connect with Symfony Connect
-                        </a>
                     </div>
                 </div>
             </form>

@@ -9,6 +9,7 @@ hwi_oauth:
             sensio: username
             github: username
             gitlab: username
+            twitter: twitterId
 
     # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
     resource_owners:
@@ -37,11 +38,10 @@ hwi_oauth:
             base_url:            "https://%env(AUTH0_DOMAIN)%"
             scope: "openid profile"
 
-        sensio:
-            type: sensio_connect
-            client_id:  "%env(SYMFONY_CONNECT_ID)%"
-            client_secret: "%env(SYMFONY_CONNECT_SECRET)%"
-            scope:  "SCOPE_EMAIL SCOPE_PUBLIC"
+        twitter:
+            type: twitter
+            client_id: M69UWvN19FCg8ho1nivfXWvli
+            client_secret: bcLv5W3aEQq6RgTfMtaR8Sjkb7pmOheYFlJPT0vTc5r2Xv12d4
 
         github:
             type: github
@@ -52,7 +52,7 @@ hwi_oauth:
         gitlab:
             type: gitlab
             client_id: 7119e4d813a63bbb648725bb749cac4d2bd9620384eedf65dd8e779b89a4547e
-            client_secret: 7119e4d813a63bbb648725bb749cac4d2bd9620384eedf65dd8e779b89a4547e
+            client_secret: 0102a2cd7ccf603a71bd5e3f1cd5294690950b7802dd6d8876c5203b60c92d2f
 
         linkedin:
             type:           linkedin

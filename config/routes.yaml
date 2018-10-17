@@ -39,6 +39,9 @@ facebook_login:
 google_login:
     path: /secured/login_google
 
+twitter_login:
+    path: /secured/login_twitter
+
 sensio_connect_login:
     path: /secured/login_sensio
 
