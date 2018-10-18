@@ -40,32 +40,27 @@ hwi_oauth:
 
         twitter:
             type: twitter
-            client_id: M69UWvN19FCg8ho1nivfXWvli
-            client_secret: bcLv5W3aEQq6RgTfMtaR8Sjkb7pmOheYFlJPT0vTc5r2Xv12d4
+            client_id: '%env(TWITTER_CLIENT_ID)%'
+            client_secret: '%env(TWITTER_SECRET)%'
 
         github:
             type: github
-            client_id: 0f84f2ad6f915e8c1c17
-            client_secret: bd6262a004978062863f415c7017a28be4c6d9e5
+            client_id: '%env(GITHUB_CLIENT_ID)%'
+            client_secret: '%env(GITHUB_CLIENT_SECRET)%'
             scope:
 
         gitlab:
             type: gitlab
-            client_id: 7119e4d813a63bbb648725bb749cac4d2bd9620384eedf65dd8e779b89a4547e
-            client_secret: 0102a2cd7ccf603a71bd5e3f1cd5294690950b7802dd6d8876c5203b60c92d2f
+            client_id: '%env(GITLAB_CLIENT_ID)%'
+            client_secret: '%env(GITLAB_CLIENT_SECRET)%'
 
         linkedin:
             type:           linkedin
-            client_id:      77u2s3kae5yihq
-            client_secret:  2cOUyMzNzxkfpexy
+            client_id:     '%env(LINKEDIN_CLIENT_ID)%'
+            client_secret:  '%env(LINKEDIN_CLIENT_SECRET)%'
             scope:
-
-        bitbucket:
-            type:           bitbucket2
-            client_id:      77u2s3kae5yihq
-            client_secret:  2cOUyMzNzxkfpexy
 
         instagram:
             type:           instagram
-            client_id:      599d8fb2e627407e84a46ac4dde4a91f
-            client_secret:  7fe2e21ffc0d478e889a62fdb9753b5b
+            client_id:      '%env(INSTAGRAM_CLIENT_ID)%'
+            client_secret:  '%env(INSTAGRAM_CLIENT_SECRET)%'
