@@ -49,46 +49,10 @@ class User extends BaseUser
     protected $website;
 
     /**
-     * @ORM\Column(type="string", name="facebook_id", nullable=true)
+     * @ORM\Column(type="string", name="provider_id", nullable=true)
      */
-    protected $facebookId;
+    protected $providerId;
 
-    /**
-     * @ORM\Column(type="string", name="google_id", nullable=true)
-     */
-    protected $googleId;
-
-    /**
-     * @return mixed
-     */
-    public function getFacebookId()
-    {
-        return $this->facebookId;
-    }
-
-    /**
-     * @param mixed $facebookId
-     */
-    public function setFacebookId($facebookId)
-    {
-        $this->facebookId = $facebookId;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getGoogleId()
-    {
-        return $this->googleId;
-    }
-
-    /**
-     * @param mixed $googleId
-     */
-    public function setGoogleId($googleId)
-    {
-        $this->googleId = $googleId;
-    }
 
     public function getId(): ?int
     {
@@ -171,6 +135,22 @@ class User extends BaseUser
     public function setWebsite($website): void
     {
         $this->website = $website;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProviderId()
+    {
+        return $this->providerId;
+    }
+
+    /**
+     * @param mixed $providerId
+     */
+    public function setProviderId($providerId): void
+    {
+        $this->providerId = $providerId;
     }
 
 }
