@@ -27,7 +27,7 @@ class MyFOSUBProvider extends FOSUBUserProvider
 
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
-        dd($response->getEmail());
+        dd($this->getProperty($response));
         $username = $response->getUsername();
         $property = $this->getProperty($response);
 
@@ -38,14 +38,16 @@ class MyFOSUBProvider extends FOSUBUserProvider
         // check if we already have this user
         $existing = $this->userManager->findUserBy(array('email' => $email));
         if ($existing instanceof User) {
+
+            $existing->setProviderId($username);
             // in case of Facebook login, update the facebook_id
-            if ($property == "facebookId") {
-                $existing->setFacebookId($username);
-            }
+//            if ($property == "facebookId") {
+//                $existing->setFacebookId($username);
+//            }
             // in case of Google login, update the google_id
-            if ($property == "googleId") {
-                $existing->setGoogleId($username);
-            }
+//            if ($property == "googleId") {
+//                $existing->setGoogleId($username);
+//            }
             $this->userManager->updateUser($existing);
 
             return $existing;
@@ -65,17 +67,20 @@ class MyFOSUBProvider extends FOSUBUserProvider
             $user->setPassword(sha1(uniqid()));
             $user->addRole('ROLE_USER');
 
-            if ($property == "facebookId") {
-                $user->setFacebookId($username);
-            }
-            if ($property == "googleId") {
-                $user->setGoogleId($username);
-            }
+            $user->setProviderId($username);
+
+//            if ($property == "facebookId") {
+//                $user->setFacebookId($username);
+//            }
+//            if ($property == "googleId") {
+//                $user->setGoogleId($username);
+//            }
         }
 
         $user->setEmail($response->getEmail());
-        $user->setFirstname($response->getFirstName());
-        $user->setLastname($response->getLastName());
+        $user->setName($response->getRealName());
+//        $user->setFirstname($response->getFirstName());
+//        $user->setLastname($response->getLastName());
 
         $this->userManager->updateUser($user);
 

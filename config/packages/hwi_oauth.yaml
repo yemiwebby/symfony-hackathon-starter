@@ -3,13 +3,14 @@ hwi_oauth:
     firewall_names: [main]
     fosub:
         properties:
-            facebook: facebookId
-            google: googleId
-            auth0: username
-            sensio: username
-            github: username
-            gitlab: username
-            twitter: twitterId
+            facebook: providerId
+            google: providerId
+            auth0: providerId
+            linkedin: providerId
+            github: providerId
+            gitlab: providerId
+            twitter: providerId
+            instagram: providerId
 
     # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
     resource_owners:
