@@ -24,6 +24,11 @@ class User extends BaseUser
     }
 
     /**
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     */
+    protected $name;
+
+    /**
      * @ORM\Column(name="first_name", type="string", length=255, nullable=true)
      */
     protected $firstName;
@@ -57,6 +62,22 @@ class User extends BaseUser
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
     }
 
 
