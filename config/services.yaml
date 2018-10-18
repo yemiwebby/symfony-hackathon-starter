@@ -33,5 +33,5 @@ services:
         class: App\Security\MyFOSUBProvider
         arguments:
             - '@fos_user.user_manager'
-            - { facebook: facebookId, google: googleId, auth0: username, sensio: username, twitter: twitterId }
+            - { facebook: providerId, google: providerId, auth0: providerId, linkedin: providerId, github: providerId, gitlab: providerId, twitter: providerId, instagram: providerId }
             - '@doctrine'
