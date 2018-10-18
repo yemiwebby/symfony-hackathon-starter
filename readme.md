@@ -465,11 +465,16 @@ class BookController extends Controller
 That's it!  
 <hr>  
   
-Laravel Eloquent Cheatsheet  
+Symfony Cheatsheet  
 -------------------  
   
-* [Eloquent Cheatsheet](http://cheats.jesse-obrien.ca/)  
-  
+* [Symfony Cheatsheet](https://www.cheatography.com/mika56/cheat-sheets/symfony/)  
+
+
+Symfony Best Practises
+----------------------
+* [Symfony Best Practises](https://symfony.com/doc/current/best_practices/index.html)  
+
   
 Deployment  
 ----------  
