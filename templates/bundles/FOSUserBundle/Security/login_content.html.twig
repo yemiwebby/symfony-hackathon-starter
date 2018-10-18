@@ -71,21 +71,36 @@
                             <i class="fa fa-github fa-sm"></i>Connect with GitHub
                         </a>
 
-                        <a class="btn btn-block btn-linkedin btn-social" href="{{ path('hwi_oauth_service_redirect', {'service': 'linkedin'}) }}">
+                        <a class="btn btn-block btn-linkedin btn-social" href="{{ path('hwi_oauth_service_redirect', {'service': 'linkedin'}) }}" style="margin-bottom: 10px;">
                             <i class="fa fa-linkedin fa-sm"></i>Connect with LinkedIn
                         </a>
 
-                        <a class="btn btn-block btn-auth0 btn-social" href="{{ path('hwi_oauth_service_redirect', {'service': 'auth0'}) }}">
-                            <i class="fa fa-facebook-f fa-sm"></i>Connect with Auth0
+                        <a href="{{ path('hwi_oauth_service_redirect', {'service': 'auth0'}) }}" style="color: #fff;">
+                            <div class="card mb-3" style="background-color: #e8542e">
+                                <div class="card-body" style="padding: 0;">
+                                    <img src="https://i.imgur.com/02VeCz0.png" height="40">
+                                    Connect with Auth0
+                                </div>
+                            </div>
                         </a>
 
 
-                        <a class="btn btn-block btn-instagram btn-social" href="{{ path('hwi_oauth_service_redirect', {'service': 'instagram'}) }}">
-                            <i class="fa fa-instagram fa-sm"></i>Connect with Instagram
+                        <a href="{{ path('hwi_oauth_service_redirect', {'service': 'instagram'}) }}" style="color: #fff">
+                            <div class="card mb-3" style="background-color: #947563">
+                                <div class="card-body" style="padding: 0;">
+                                    <img src="https://i.imgur.com/aRc6LUJ.png" height="40">
+                                    Connect with Instagram
+                                </div>
+                            </div>
                         </a>
 
-                        <a class="btn btn-block btn-gitlab btn-social" href="{{ path('hwi_oauth_service_redirect', {'service': 'gitlab'}) }}">
-                            <i class="fa fa-gitlab fa-sm"></i>Connect with GitLab
+                        <a href="{{ path('hwi_oauth_service_redirect', {'service': 'gitlab'}) }}" style="color: #fff">
+                            <div class="card mb-3" style="background-color: #fca326">
+                                <div class="card-body" style="padding: 0;">
+                                    <img src="https://i.imgur.com/rmO0V2W.png" height="40">
+                                    Connect with GitLab
+                                </div>
+                            </div>
                         </a>
 
                     </div>
