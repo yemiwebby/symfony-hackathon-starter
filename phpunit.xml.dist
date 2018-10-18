@@ -20,6 +20,11 @@
         <env name="FB_ID" value=""/>
         <env name="FB_SECRET" value=""/>
         <!-- ###- hwi/oauth-bundle ### -->
+
+        <!-- ###+ mailgun/mailgun-php ### -->
+        <!-- Get your API key form https://app.mailgun.com/app/domains -->
+        <env name="MAILGUN_API_KEY" value="&quot;replace_me&quot;"/>
+        <!-- ###- mailgun/mailgun-php ### -->
     </php>
 
     <testsuites>

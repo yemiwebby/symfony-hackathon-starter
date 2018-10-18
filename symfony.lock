@@ -2,6 +2,9 @@
     "clue/stream-filter": {
         "version": "v1.4.0"
     },
+    "cspoo/swiftmailer-mailgun-bundle": {
+        "version": "1.1.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -110,6 +113,15 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "mailgun/mailgun-php": {
+        "version": "2.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "2.3",
+            "ref": "d3188b6cdc58f877ef2884b55ac4798640b4b9be"
+        }
+    },
     "monolog/monolog": {
         "version": "1.23.0"
     },
@@ -151,6 +163,9 @@
     },
     "php-http/message-factory": {
         "version": "v1.0.2"
+    },
+    "php-http/multipart-stream-builder": {
+        "version": "1.0.0"
     },
     "php-http/promise": {
         "version": "v1.0.0"
