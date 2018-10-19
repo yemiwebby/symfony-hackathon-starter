@@ -2,7 +2,10 @@
 ## Symfony Hackathon Starter  
   
  **Live Demo**: [https://symfony-hackathon-starter.herokuapp.com/](https://symfony-hackathon-starter.herokuapp.com/)
- A boilerplate for  **Symfony**  web applications.
+ 
+ 
+A boilerplate for  **Symfony**  web applications.
+
  
 If you have attended any hackathons in the past, then you know how much time it takes to get a project started: decide on what to build, pick a programming language, pick a web framework, pick a CSS framework. A while later, you might have an initial project up on GitHub and only then can other team members start contributing. Or how about doing something as simple as Sign in with Facebook authentication? You can spend hours on it if you are not familiar with how OAuth 2.0 works.  
   
@@ -304,18 +307,15 @@ FAQ
 How It Works (mini guides)  
 --------------------------  
   
-This section is intended for giving you a detailed explanation about  
-how a particular functionality works. Maybe you are just curious about  
-how it works, or maybe you are lost and confused while reading the code,  
+This section is intended for giving you a detailed explanation about how a particular functionality works. Maybe you are just curious about how it works, or maybe you are lost and confused while reading the code.
+ 
 I hope it provides some guidance to you.  
   
 <hr>  
   
 ### How do flash messages work in this project?  
-Flash messages allow you to display a message at the end of the request and access  
-it on next request and only next request. For instance, on a failed login attempt, you would  
-display an alert with some error message, but as soon as you refresh that page or visit a different  
-page and come back to the login page, that error message will be gone. It is only displayed once.  
+Flash messages allow you to display a message at the end of the request and access it on next request and only next request. For instance, on a failed login attempt, you would display an alert with some error message, but as soon as you refresh that page or visit a different page and come back to the login page, that error message will be gone. It is only displayed once.  
+
 All flash messages are available in your views via laravel sessions.  
   
 <hr>  
@@ -358,7 +358,7 @@ picks. From my experience, **Heroku** is the easiest to get started with,  deplo
   
 - And you are done!  
   
-<img src="https://cdn.iconscout.com/icon/free/png-256/digitalocean-1-283338.png" width="200">  
+<img src="https://cdn.iconscout.com/icon/free/png-256/digitalocean-1-283338.png" width="200" h>  
 
 This [tutorial](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-symfony-4-application-to-production-with-lemp-on-ubuntu-18-04) will guide you on how to successfully deploy a Symfony 4 Application on Digital Ocean
   
