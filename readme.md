@@ -4,16 +4,10 @@
  **Live Demo**: [https://symfony-hackathon-starter.herokuapp.com/](https://symfony-hackathon-starter.herokuapp.com/)
  A boilerplate for  **Symfony**  web applications.
  
-If you have attended any hackathons in the past, then you know how much time it takes to   
-get a project started: decide on what to build, pick a programming language,   
-pick a web framework, pick a CSS framework. A while later, you might have an   
-initial project up on GitHub and only then can other team members start contributing.  
- Or how about doing something as simple as Sign in with Facebook authentication?   
- You can spend hours on it if you are not familiar with how OAuth 2.0 works.  
+If you have attended any hackathons in the past, then you know how much time it takes to get a project started: decide on what to build, pick a programming language, pick a web framework, pick a CSS framework. A while later, you might have an initial project up on GitHub and only then can other team members start contributing. Or how about doing something as simple as Sign in with Facebook authentication? You can spend hours on it if you are not familiar with how OAuth 2.0 works.  
   
-  The aim and usage of this project goes beyond hackathon purposes only, Symfony Hackathon starter will definitely save any developer hours or even days of development time and can serve as a learning guide for web developers in general.
+The aim and usage of this project goes beyond hackathon purposes only, Symfony Hackathon starter will definitely save any developer hours or even days of development time and can serve as a learning guide for web developers in general.
   
-Describe Symfony as a set of reusable PHP components and a web framework here. And add more details  
  
  [Symfony](https://symfony.com) is an open-source PHP framework with an elegant structure and a reputation for being a suitable framework to kick-start any project irrespective of its size. As a set of reusable components, its flexibility, architecture, and high performance make it a top choice for building a highly complex enterprise application. 
   
@@ -327,88 +321,8 @@ All flash messages are available in your views via laravel sessions.
 <hr>  
   
 ### How do I create a new page?  
-A more correct way to be to say "How do I create a new route". The main file `routes.php` contains all the routes.  
-Each route has a callback function associated with it. Sometimes you will see 3 or more arguments  
-to routes. In cases like that, the first argument is still a URL string, while middle arguments  
-are what's called middleware. Think of middleware as a door. If this door prevents you from  
-continuing forward, you won't get to your callback function. One such example is a route that requires authentication.  
-  
-```php  
-Route::get('/account', 'UserController@getAccount');  
-```  
-  
-It always goes from left to right. A user visits `/account` page. Then `auth` middleware  
-checks if you are authenticated:  
-  
-```php  
- Route::get('/account', [ 'uses' => 'AccountController@getAccountPage', 'as'   => 'account.dashboard', 'middleware' => ['auth']]);  
-```  
-  
-If you are authenticated, you let this visitor pass through your "door" by calling `return $next($request);` in the auth middleware and if you are authenticated, you will be redirected to *Account Management* page, otherwise you will be redirected to *Login* page.  
-  
-Here is a typical workflow for adding new routes to your application. Let's say we are building  
-a page that lists all books from database.  
-  
-**Step 1.** Start by defining a route.  
-  
-```php  
-Route::get('/books', 'BookController@getBooks');  
-```  
----  
-  
-**Step 2.** Create a new model `Book.php` inside the *app* directory. You can simply run `php artisan make:model Book`  
-  
-```php  
-  
-namespace App;  
-  
-class Book  
-{  
- /** * The attributes that are mass assignable. * * @var array */ protected $fillable = [ 'name', 'isbn', ];}  
-  
-```  
-  
-**Step 3.** Create a migration file like so: `php artisan make:migration create_books_table`  
-  
-```php  
-  
-use Illuminate\Database\Schema\Blueprint;  
-use Illuminate\Database\Migrations\Migration;  
-  
-class CreateBooksTable extends Migration  
-{  
- /** * Run the migrations. * * @return void */ public function up() { Schema::create('books', function (Blueprint $table) { $table->increments('id'); $table->string('name'); $table->string('isbn'); $table->timestamps(); }); }  
- /** * Reverse the migrations. * * @return void */ public function down() { Schema::drop('books'); }}  
-```  
-  
-**Step 4.** Create a new controller file called `BookController` inside the *app/Http/Controllers* directory. You can simply run `php artisan make:controller BookController`  
-  
-```php  
-namespace App\Http\Controllers;  
-  
-use Illuminate\Http\Request;  
-  
-use App\Book;  
-use App\Http\Requests;  
-use App\Http\Controllers\Controller;  
-  
-class BookController extends Controller  
-{  
- /** * Return all books * @return mixed */ public function getBooks() { $books = Book::all();  
- return view('books')->withBooks($books); }}  
-```  
-  
-**Step 5.** Create `books.blade.php` template.  
-```php  
-@extends('layouts.master')  
-  
-@section('content')  
- <div class="main-container"> @include('layouts.partials.alerts')  
- <div class="page-header"> <h2><i style="color: #f00" class="fa fa-book"></i>All Books</h2> </div>  
- <ul> @foreach ($books as $book) <li> {{ $book->name }} </li> @endforeach </div> </div>@stop  
-```  
-  
-That's it!  
+
+Go through the following guide in order to successfully create a new page. [Check here](https://symfony.com/doc/current/page_creation.html)
 <hr>  
   
 Symfony Cheatsheet  
