@@ -322,7 +322,31 @@ All flash messages are available in your views via laravel sessions.
   
 ### How do I create a new page?  
 
-Go through the following guide in order to successfully create a new page. [Check here](https://symfony.com/doc/current/page_creation.html)
+Go through the following guide in order to successfully create a new page. [Check here](https://symfony.com/doc/current/page_creation.html).
+
+Alternatively, you can also leverage the [Symfony maker bundle](https://symfony.com/doc/current/bundles/SymfonyMakerBundle/index.html) to generate a controller. Once you do this, it
+will also automatically create a new templates file that can easily be rendered by the newly generated controller.
+
+To begin, run the following command to have it installed via composer:
+
+```bash
+$ composer require symfony/maker-bundle --dev
+```
+
+If you are using Symfony hackathon starter project, you don't need to install the maker-bundle again. Next,
+proceed to your terminal and run:
+
+```bash
+$ php bin/console make:controller SampleController
+```
+
+The preceding command will create two new file:
+1. src/Controller/SampleController.php - the new controller
+2. templates/sample/index.html.twig - `SampleController` templates file
+
+To view the new page, ensure that your application is running (`php bin/console server:run`) and
+navigate to `https://localhost:8000/sample`.
+
 <hr>  
   
 Symfony Cheatsheet  
