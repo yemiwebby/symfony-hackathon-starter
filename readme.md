@@ -243,22 +243,11 @@ Project Structure
   
 | Name                                     | Description                                                  |  
 | ----------------------------------       | ------------------------------------------------------------ |  
-| **config**/app.php                       | Configuration for service providers and facades              |  
-| **config**/auth.php                      | Configuration for password resets                            |  
-| **config**/broadcasting.php              | Configuration for broadcasting                               |  
-| **config**/cache.php                     | Configuration for cache generation and storage               |  
-| **config**/cloudder.php                  | Configuration for cloudinary                                 |  
-| **config**/compile.php                   | Configuration for compilation                                |  
-| **config**/database.php                  | Configuration for database drivers                           |  
-| **config**/filesystems.php               | Configuration for different file systems                     |  
-| **config**/github.php                    | Configuration for github API                                 |  
-| **config**/mail.php                      | Configuration for mails                                      |  
-| **config**/queue.php                     | Configuration for queue                                      |  
-| **config**/services.php                  | Configuration for several services like mailgun etc.         |  
-| **config**/session.php                   | Configuration for sessions                                   |  
-| **config**/ttwitter.php                  | Twitter API config file                                      |  
-| **config**/twilio.php                    | Twilio API config file                                       |  
-| **config**/view.php                      | Configuration for location of views and view cache           |  
+| **config**/config/fos_user.yaml                       | Configuration for FOS User Bundle              |  
+| **config**/config/hwi_oauth.yaml                      | Configuration for HWIOAuthBundle                            |  
+| **config**/config/security.yaml              | Configuration for Symfony security's system                               |  
+| **config**/config/routes/routes.yaml                     | Configuration file for routing                |  
+| **config**/config/services.yaml                  | This file is the entry point to configure your own services                                |  
 | **controllers**/src/Controller/AccountController.php    | Controller for Account management                            |  
 | **controllers**/src/Controller/ContactController.php    | Controller for Contact page                                  |  
 | **controllers**/src/Controller/HomeController.php           | Controller for rendering all pages                                               |  
@@ -272,22 +261,15 @@ Project Structure
 | **templates/bundles/FOSUserBundle**/             | This folder contains templates to override the default templates of FOSUserBundle for *login, password reset, signup, profile*.      |  
 | **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
 | **templates/emails/contact.html.twig**/                           | Templates file for contact page form.                                  |  
-| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
-| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
-| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
-| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
-| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
-| **views/partials**/alerts.blade.php      | Error, info and success flash notifications.                 |  
-| **views/partials**/navbar.blade.php      | Navbar partial template.                                     |  
-| **views**/layouts**/master.blade.php     | Base template.                                               |  
-| **views**/apidashboard.blade.php         | API dashboard template.                                      |  
-| **views**/contact.blade.php              | Contact page template.                                       |  
-| **views**/welcome.blade.php              | Home page template.                                          |  
-| .travis.yml                              | [Travis CI](https://travis-ci.org/) integration.             |  
-| .env.example                             | Your API keys, tokens, passwords and database URI.           |  
+| **templates/includes/footer.html.twig**/                           | Footer partial template.                                  |  
+| **templates/includes/header.html.twig**/                           | Header partial template.                                  |  
+| **templates/user/account.html.twig**/                           | Templates for the account page.                                  |  
+| **templates/base.html.twig**/                           | Base template.                                  |  
+| **templates/contact.html.twig**/                           | Templates for the contact page.                                  |  
+| Procfile                              | Configuration file to set the web root on Heroku             |  
+| .env.dist                             | Your API keys, tokens, passwords and database URI.           |  
 | composer.json                            | File for loading all php packages.                           |  
 | package.json                             | File for loading all necessary node modules.                 |  
-| artisan                                  | File for enabling commands to run                            |  
   
   
 List of Packages  
@@ -295,27 +277,17 @@ List of Packages
   
 | Package                         | Description                                                           |  
 | ------------------------------- | --------------------------------------------------------------------- |  
-| socialite                       | Sign-in with Facebook, Twitter and Github                             |  
-| socialite providers             | Sign-in with LinkedIn, Instagram                                      |  
-| cloudder                        | Upload images to Cloudinary                                           |  
-| laravel github                  | Github API library                                                    |  
-| clockwork                       | Clockwork SMS API library.                                            |  
-| goutte                          | Scrape web pages using jQuery-style syntax.                           |  
-| laravel framework               | PHP web framework                                                     |  
-| twitter                         | Twitter API library                                                   |  
-| twilio                          | Twilio API library                                                    |  
-| lob-php                         | Lob API library                                                       |  
-| lastfm-api-wrapper              | Lastfm API library                                                    |  
+| FOSUserBundle                       | Providers user management for Symfony project                             |  
+| HWIOAuthBundle                       | OAuth client integration for Symfony. Supports both OAuth1.0a and OAuth2.                             |  
 | phpunit                         | PHP testing library                                                   |  
 | guzzlehttp                      | Simplified HTTP Request library                                       |  
   
   
 Useful Tools and Resources  
 --------------------------  
-- [Laravel Daily](http://laraveldaily.com/) - Awesome laravel tips daily  
-- [Laravel News](https://laravel-news.com/) - Laravel and PHP tutorials.  
-- [Goodheads](http://goodheads.io) - Laravel, PHP and JS tutorials  
-- [Favicon Generator](http://realfavicongenerator.net/) - Generate favicons for PC, Android, iOS, Windows 8.  
+- [Symfony Blog](https://symfony.com/blog/) - Official Symfony blog  
+- [Cloudways Blog](https://www.cloudways.com/blog/?s=symfony) - Symfony, PHP and other tutorials.  
+- [SymfonyCasts](https://symfonycasts.com/) - Video tutorials for Symfony  
   
 Recommended Design Resources  
 ----------------------------  
@@ -324,38 +296,16 @@ Recommended Design Resources
 - [UIBox](http://www.uibox.in) - Curated HTML, CSS, JS, UI components.  
 - [Bootstrap Zero](https://www.bootstrapzero.com) - Free Bootstrap templates themes.  
 - [Google Bootstrap](http://todc.github.io/todc-bootstrap/) - Google-styled theme for Bootstrap.  
-- [Font Awesome Icons](http://fortawesome.github.io/Font-Awesome/icons/) - It's already part of the Hackathon Starter, so use this page as a reference.  
 - [Colors](http://clrs.cc) - A nicer color palette for the web.  
 - [Creative Button Styles](http://tympanus.net/Development/CreativeButtons/) - awesome button styles.  
 - [Creative Link Effects](http://tympanus.net/Development/CreativeLinkEffects/) - Beautiful link effects in CSS.  
 - [Medium Scroll Effect](http://codepen.io/andreasstorm/pen/pyjEh) - Fade in/out header background image as you scroll.  
 - [GeoPattern](https://github.com/btmills/geopattern) - SVG background pattern generator.  
 - [Trianglify](https://github.com/qrohlf/trianglify) - SVG low-poly background pattern generator.  
-  
-  
-Recommended Laravel Libraries  
------------------------------  
-  
-- [laravel-medialibrary](https://github.com/spatie/laravel-medialibrary) - Associated media files with your Eloquent models easily.  
-- [laravel-emoji](https://github.com/unicodeveloper/laravel-emoji) - For using emojis in your app  
-- [laravel-quotes](https://github.com/unicodeveloper/laravel-quotes) - For using all sorts of quotes especially DJKHALED in your app  
-  
+ 
   
 FAQ  
----  
-  
-### Why do I get `Token Mismatch Exception` when submitting a form?  
-You need to add the following hidden input element to your form. This has been  
-added in the existing codebase as part of the CSRF protection.  
-  
-```  
-{!! csrf_field() !!}  
-```  
-  
-  
-### I get a whoops error when I deploy my app, why?  
-Chances are you haven't generated the app key, so run `php artisan key:generate`.  
-Chances are you haven't put your credentials in your .env file.  
+--- 
   
 How It Works (mini guides)  
 --------------------------  
@@ -487,45 +437,26 @@ picks. From my experience, **Heroku** is the easiest to get started with,  deplo
 - Create a Procfile in your app root. All this file needs to contain is `web: vendor/bin/heroku-php-nginx public` or `web: vendor/bin/heroku-php-apache2 public` if you prefer to use nginx.  
 - Run `heroku addons:add heroku-postgresql:dev  ` to add a Postgres database to your heroku app from your terminal  
 - Lastly, do `git push heroku master`.  Done!  
-- Run artisan commands on heroku like so `heroku run php artisan migrate`  
   
 **Note:** To install Heroku add-ons your account must be verified.  
   
 ---  
   
-- Finally, you can now push your code to OpenShift by running `git push -f openshift master`  
- - **Note:** The first time you run this command, you have to pass `-f` (force) flag because OpenShift creates a dummy server with the welcome page when you create a new Node.js app. Passing `-f` flag will override everything with your *Hackathon Starter* project repository. **Do not** run `git pull` as it will create unnecessary merge conflicts.  
 - And you are done!  
   
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Windows_Azure_logo.png" width="200">  
+<img src="https://cdn.iconscout.com/icon/free/png-256/digitalocean-1-283338.png" width="200">  
+
+This [tutorial](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-symfony-4-application-to-production-with-lemp-on-ubuntu-18-04) will guide you on how to successfully deploy a Symfony 4 Application on Digital Ocean
   
-- Login to [Windows Azure Management Portal](https://manage.windowsazure.com/)  
-- Click the **+ NEW** button on the bottom left of the portal  
-- Click **COMPUTE**, then **WEB APP**, then **QUICK CREATE**  
-- Enter a name for **URL** and select the datacenter **REGION** for your web site  
-- Click on **CREATE WEB APP** button  
-- Once the web site status changes to *Running*, click on the name of the web site to access the Dashboard  
-- At the bottom right of the Quickstart page, select **Set up a deployment from source control**  
-- Select **Local Git repository** from the list, and then click the arrow  
-- To enable Git publishing, Azure will ask you to create a user name and password  
-- Once the Git repository is ready, you will be presented with a **GIT URL**  
-- Inside your *Hackathon Starter* directory, run `git remote add azure [Azure Git URL]`  
-- To push your changes simply run `git push azure master`  
- - **Note:** *You will be prompted for the password you created earlier*  
-- On **Deployments** tab of your Windows Azure Web App, you will see the deployment history  
-  
-  
-**Note:** Alternative directions, including how to setup the project with a DevOps pipeline are available at [http://ibm.biz/hackstart](http://ibm.biz/hackstart).  
-A longer version of these instructions with screenshots is available at [http://ibm.biz/hackstart2](http://ibm.biz/hackstart2).  
-Also, be sure to check out the [Jump-start your hackathon efforts with DevOps Services and Bluemix](https://www.youtube.com/watch?v=twvyqRnutss) video.  
-  
+
+
 ## Contributing  
   
 Thank you for considering contributing to Symfony Hackathon Starter. The contribution guide can be found in the [Contribution File](CONTRIBUTING.md)  
   
 ## Security Vulnerabilities  
   
-If you discover a security vulnerability within Laravel Hackathon Starter, please send an e-mail to Olususi Oluyemi at yemiwebby@gmail.com. All security vulnerabilities will be promptly addressed.  
+If you discover a security vulnerability within Symfony Hackathon Starter, please send an e-mail to Olususi Oluyemi at yemiwebby@gmail.com. All security vulnerabilities will be promptly addressed.  
   
 ## Credits  
 * [Prosper Otemuyiwa](https://github.com/unicodeveloper/laravel-hackathon-starter) - Larathon  
