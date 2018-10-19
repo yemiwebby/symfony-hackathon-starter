@@ -94,6 +94,7 @@ Getting Started
 #### Via Cloning The Repository:  
   
   The easiest way to get started is to clone the repository:
+  
 ```bash  
 # Get the project  
 git clone https://github.com/yemiwebby/symfony-hackathon-starter.git
@@ -258,29 +259,24 @@ Project Structure
 | **config**/ttwitter.php                  | Twitter API config file                                      |  
 | **config**/twilio.php                    | Twilio API config file                                       |  
 | **config**/view.php                      | Configuration for location of views and view cache           |  
-| **controllers**/AccountController.php    | Controller for Account management                            |  
-| **controllers**/AviaryController.php     | Controller for Aviary API functionality                      |  
-| **controllers**/ClockworkController.php  | Controller for Clockwork API functionality                   |  
-| **controllers**/ContactController.php    | Controller for Contact page                                  |  
-| **controllers**/Controller.php           | BaseController                                               |  
-| **controllers**/GithubController.php     | Controller for Github API functionality                      |  
-| **controllers**/LastFmController.php     | Controller for LastFM API functionality                      |  
-| **controllers**/LobController.php        | Controller for Lob API functionality.                        |  
-| **controllers**/NytController.php        | Controller for New York Times API functionality              |  
-| **controllers**/OauthController.php      | Controller for Oauthentication                               |  
-| **controllers**/PaypalController.php     | Controller for Paypal API functionality                      |  
-| **controllers**/SteamController.php      | Controller for Stream API functionality                      |  
-| **controllers**/StripeController.php     | Controller for Stripe API functionality                      |  
-| **controllers**/TwilioController.php     | Controller for Twilio API functionality                      |  
-| **controllers**/TwitterController.php    | Controller for Twitter API functionality                     |  
-| **controllers**/WebScrapingController.php| Controller for Web Scraping.                                 |  
-| **controllers**/YahooController.php      | Controller for Yahoo API functionality                       |  
+| **controllers**/src/Controller/AccountController.php    | Controller for Account management                            |  
+| **controllers**/src/Controller/ContactController.php    | Controller for Contact page                                  |  
+| **controllers**/src/Controller/HomeController.php           | Controller for rendering all pages                                               |  
 | **controllers**/user.js                  | Controller for user account management.                      |  
-| **models**/User.php                      | Model for User.                                             |  
+| **Entity**/src/Entity/User.php                      | User's Entity.                                             |  
+| **Repository**/src/Repository/UserRepository.php                              | User Repository.                         |  
+| **Provider**/src/Security/MyFOSUBProvider.php                              | Friends of Symfony User bundle provider.                         |  
+| **Provider**/src/Auth0ResourceOwner.php                              | Provider for Auth0.                         |  
 | **public**/                              | Static assets (fonts, css, js, img).                         |  
-| **public**/**css**/main.css              | Main stylesheet for your app.                                |  
-| **resources/views/account**/             | Templates for *login, password reset, signup, profile*.      |  
-| **views/api**/                           | Templates for API Examples.                                  |  
+| **public**/**css**/style.css              | Main stylesheet for your app.                                |  
+| **templates/bundles/FOSUserBundle**/             | This folder contains templates to override the default templates of FOSUserBundle for *login, password reset, signup, profile*.      |  
+| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
+| **templates/emails/contact.html.twig**/                           | Templates file for contact page form.                                  |  
+| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
+| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
+| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
+| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
+| **templates/default/index.html.twig**/                           | Templates for the homepage.                                  |  
 | **views/partials**/alerts.blade.php      | Error, info and success flash notifications.                 |  
 | **views/partials**/navbar.blade.php      | Navbar partial template.                                     |  
 | **views**/layouts**/master.blade.php     | Base template.                                               |  
