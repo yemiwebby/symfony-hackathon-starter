@@ -7,7 +7,7 @@ fos_user:
         sender_name: Symfony-hackathon-starter
     registration:
         confirmation:
-            enabled: true
+            enabled: false
     resetting:
         email:
             from_email:
