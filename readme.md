@@ -1,4 +1,3 @@
-![larathon-banner](https://user-images.githubusercontent.com/19610753/47154697-eb77ca80-d2da-11e8-9e0d-aa2539d07ca8.jpg)
 ## Symfony Hackathon Starter  
   
  **Live Demo**: [https://symfony-hackathon-starter.herokuapp.com/](https://symfony-hackathon-starter.herokuapp.com/)
