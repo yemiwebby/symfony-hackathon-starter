@@ -229,6 +229,7 @@ The same goes for other providers.
 <hr>  
   
 <img src="https://raw.github.com/mailgun/media/master/Mailgun_Primary.png" width="200">  
+
 - Go to http://www.mailgun.com  
 - Sign up and add your *Domain Name*  
 - From the domain overview, copy and paste the default SMTP *Login* and *Password* into `.env` file  
