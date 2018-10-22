@@ -1,5 +1,4 @@
-![symfony-starter](https://user-images.githubusercontent.com/19610753/47261669-373d9600-d4cc-11e8-9411-8366035ebf32.jpeg)
-
+![banner-symfony](https://user-images.githubusercontent.com/19610753/47301207-4af51380-d616-11e8-866f-c510f0d6ddf7.jpeg)
 ## Symfony Hackathon Starter  
   
  **Live Demo**: [https://symfony-hackathon-starter.herokuapp.com/](https://symfony-hackathon-starter.herokuapp.com/)
