@@ -316,8 +316,6 @@ I hope it provides some guidance to you.
   
 ### How do flash messages work in this project?  
 Flash messages allow you to display a message at the end of the request and access it on next request and only next request. For instance, on a failed login attempt, you would display an alert with some error message, but as soon as you refresh that page or visit a different page and come back to the login page, that error message will be gone. It is only displayed once.  
-
-All flash messages are available in your views via laravel sessions.  
   
 <hr>  
   
