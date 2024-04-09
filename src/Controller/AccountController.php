@@ -44,7 +44,7 @@ class AccountController extends AbstractController
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function updateAccount(Request $request)
+    public function updateAccount(Request $request): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $user = $this->userRepository->find($this->getUser()->getId());
 
@@ -61,7 +61,7 @@ class AccountController extends AbstractController
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
      */
-    public function changePassword(Request $request, UserPasswordEncoderInterface $encoder)
+    public function changePassword(Request $request, UserPasswordEncoderInterface $encoder): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $user = $this->userRepository->find($this->getUser()->getId());
         $encoded = $encoder->encodePassword($user, $request->get('password'));
@@ -78,14 +78,12 @@ class AccountController extends AbstractController
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteAccount(Request $request)
+    public function deleteAccount(): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $user = $this->userRepository->find($this->getUser()->getId());
         $this->removeObject($user);
-
         $session = new Session();
         $session->clear();
-
         return $this->redirect('/');
     }
 
@@ -94,7 +92,7 @@ class AccountController extends AbstractController
      * @param Request $request
      * @param User $user
      */
-    public function updateUser(Request $request, User $user)
+    public function updateUser(Request $request, User $user): void
     {
 
         $user->setEmail($request->get('email'));
@@ -109,7 +107,7 @@ class AccountController extends AbstractController
      * Update the database
      * @param $object
      */
-    public function persistObject($object)
+    public function persistObject($object): void
     {
         $this->entityManager->persist($object);
         $this->entityManager->flush();
@@ -119,7 +117,7 @@ class AccountController extends AbstractController
      * Delete object from the database
      * @param $object
      */
-    public function removeObject($object)
+    public function removeObject($object): void
     {
         $this->entityManager->remove($object);
         $this->entityManager->flush();

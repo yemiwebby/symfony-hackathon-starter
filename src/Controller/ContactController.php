@@ -20,7 +20,7 @@ class ContactController extends AbstractController
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function submitForm(Request $request, \Swift_Mailer $mailer)
+    public function submitForm(Request $request, \Swift_Mailer $mailer): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $name = $request->get('name');
         $email = $request->get('email');

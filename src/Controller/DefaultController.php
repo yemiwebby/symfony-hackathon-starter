@@ -10,7 +10,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="default")
      */
-    public function index()
+    public function index(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('default/index.html.twig', [
             'controller_name' => 'DefaultController'

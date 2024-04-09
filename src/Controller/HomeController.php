@@ -10,7 +10,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/home", name="home")
      */
-    public function index()
+    public function index(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
@@ -22,7 +22,7 @@ class HomeController extends AbstractController
      * @Route("/account", name="account")
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function accountPage()
+    public function accountPage(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('user/account.html.twig');
     }
@@ -31,7 +31,7 @@ class HomeController extends AbstractController
      * @Route("/contact", name="contact")
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function contactPage()
+    public function contactPage(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render('contact.html.twig');
     }
