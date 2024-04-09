@@ -16,10 +16,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactController extends AbstractController
 {
     /**
-     * @Route("/contact/submit", name="submit_contact")
-     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
+    #[Route(path: '/contact/submit', name: 'submit_contact')]
     public function submitForm(Request $request, \Swift_Mailer $mailer): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $name = $request->get('name');
@@ -31,7 +30,7 @@ class ContactController extends AbstractController
             ->setBody(
                 $this->renderView(
                     'emails/contact.html.twig',
-                    array('name' => $name)
+                    ['name' => $name]
                 ),
                 'text/html'
             )

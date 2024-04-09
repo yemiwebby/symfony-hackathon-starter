@@ -16,24 +16,20 @@ use HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider;
 
 class MyFOSUBProvider extends FOSUBUserProvider
 {
-    private $doctrine;
-
-    public function __construct(UserManagerInterface $userManager, array $properties, $doctrine)
+    public function __construct(UserManagerInterface $userManager, array $properties, private $doctrine)
     {
         parent::__construct($userManager, $properties);
-
-        $this->doctrine = $doctrine;
     }
 
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)
     {
         $username = $response->getUsername();
 
-        $user = $this->userManager->findUserBy(array($this->getProperty($response) => $username));
+        $user = $this->userManager->findUserBy([$this->getProperty($response) => $username]);
 
         $email = $response->getEmail();
         // check if we already have this user
-        $existing = $this->userManager->findUserBy(array('email' => $email));
+        $existing = $this->userManager->findUserBy(['email' => $email]);
         if ($existing instanceof User) {
 
             $existing->setProviderId($username);
@@ -66,7 +62,7 @@ class MyFOSUBProvider extends FOSUBUserProvider
 
     function getUsernameForUser($name)
     {
-        $arr = explode(' ',trim($name));
-        return $arr[0].rand(5, 150);
+        $arr = explode(' ',trim((string) $name));
+        return $arr[0].random_int(5, 150);
     }
 }

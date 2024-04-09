@@ -20,30 +20,22 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class AccountController extends AbstractController
 {
     /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
-
-    /**
      * @var \Doctrine\Common\Persistence\ObjectRepository
      */
     private $userRepository;
 
     /**
      * AccountController constructor.
-     * @param EntityManagerInterface $entityManager
      */
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(private readonly EntityManagerInterface $entityManager)
     {
-        $this->entityManager = $entityManager;
-        $this->userRepository = $entityManager->getRepository('App:User');
+        $this->userRepository = $this->entityManager->getRepository('App:User');
     }
 
     /**
-     * @Route("/update/profile", name="profile_update")
-     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
+    #[Route(path: '/update/profile', name: 'profile_update')]
     public function updateAccount(Request $request): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $user = $this->userRepository->find($this->getUser()->getId());
@@ -55,12 +47,11 @@ class AccountController extends AbstractController
     }
 
     /**
-     * @Route("/account/password", name="change_password")
-     * @param Request $request
      * @param UserPasswordEncoderInterface $encoder
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
      */
+    #[Route(path: '/account/password', name: 'change_password')]
     public function changePassword(Request $request, UserPasswordEncoderInterface $encoder): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $user = $this->userRepository->find($this->getUser()->getId());
@@ -74,10 +65,10 @@ class AccountController extends AbstractController
     }
 
     /**
-     * @Route("/account/delete", name="delete_account")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
+    #[Route(path: '/account/delete', name: 'delete_account')]
     public function deleteAccount(): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $user = $this->userRepository->find($this->getUser()->getId());
@@ -89,8 +80,6 @@ class AccountController extends AbstractController
 
     /**
      * Update users' profile
-     * @param Request $request
-     * @param User $user
      */
     public function updateUser(Request $request, User $user): void
     {
