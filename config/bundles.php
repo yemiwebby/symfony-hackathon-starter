@@ -18,4 +18,5 @@ return [
     Http\HttplugBundle\HttplugBundle::class => ['all' => true],
     FOS\UserBundle\FOSUserBundle::class => ['all' => true],
     cspoo\Swiftmailer\MailgunBundle\cspooSwiftmailerMailgunBundle::class => ['all' => true],
+    Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],
 ];

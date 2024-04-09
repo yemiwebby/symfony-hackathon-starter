@@ -15,3 +15,8 @@
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 .idea
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
