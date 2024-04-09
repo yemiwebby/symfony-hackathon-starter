@@ -18,7 +18,7 @@ class Auth0ResourceOwner extends GenericOAuth2ResourceOwner
     /**
      * {@inheritdoc}
      */
-    protected $paths = array(
+    protected array $paths = array(
         'identifier' => 'user_id',
         'nickname' => 'nickname',
         'realname' => 'name',
