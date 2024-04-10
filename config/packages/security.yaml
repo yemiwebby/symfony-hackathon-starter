@@ -1,19 +1,20 @@
 security:
-#    encoders:
-#        FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
+    password_hashers:
+        App\Entity\User:
+            algorithm: auto
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-       backend_users:
-          memory:
-             users:
-                john_admin: { password: '$2y$13$jxGxc ... IuqDju', roles: [ 'ROLE_ADMIN' ] }
-                jane_admin: { password: '$2y$13$PFi1I ... rGwXCZ', roles: [ 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN' ] }
-#        fos_userbundle:
-#            id: fos_user.user_provider.username
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+           id: App\Security\UserProvider
+#            entity:
+#                class: App\Entity\User
+#                property: email
 
     firewalls:
         dev:
@@ -22,7 +23,7 @@ security:
         main:
             pattern: ^/
             form_login:
-               provider: backend_users
+               provider: app_user_provider
                login_path: fos_user_security_login
                check_path: /login_check
 #               csrf_token_generator: security.csrf.token_manager
@@ -47,12 +48,12 @@ security:
               failure_path: fos_user_security_login
 
               oauth_user_provider:
-                  service: my.oauth_aware.user_provider.service
+                  service: App\Security\UserProvider
 #            anonymous: true
             logout:
               path: fos_user_security_logout
               target: /login
-
+            entry_point: 'form_login'
             # activate different ways to authenticate
 
             # http_basic: true
@@ -64,9 +65,9 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+         - { path: ^/login$, role: PUBLIC_ACCESS }
+         - { path: ^/register, role: PUBLIC_ACCESS }
+         - { path: ^/resetting, role: PUBLIC_ACCESS }
          - { path: ^/admin/, role: ROLE_ADMIN }
          - { path: ^/profile, roles: ROLE_USER }
          - { path: ^/account, roles: ROLE_USER }

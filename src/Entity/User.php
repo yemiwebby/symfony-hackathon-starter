@@ -2,138 +2,135 @@
 
 namespace App\Entity;
 
+use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
-#[ORM\Table(name: 'fos_user')]
-#[ORM\Entity]
-class User
-{
+#[ORM\Entity(repositoryClass: UserRepository::class)]
+#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email', 'username'])]
+class User implements UserInterface, PasswordAuthenticatedUserInterface {
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
-    protected $id;
+    #[ORM\Column]
+    private ?int $id = null;
 
-    public function __construct()
-    {
-    }
+    #[ORM\Column(length: 180)]
+    private ?string $email = null;
 
-    #[ORM\Column(name: 'name', type: 'string', length: 255, nullable: true)]
-    protected $name;
+    /**
+     * @var list<string> The user roles
+     */
+    #[ORM\Column]
+    private array $roles = [];
 
-    #[ORM\Column(name: 'first_name', type: 'string', length: 255, nullable: true)]
-    protected $firstName;
+    /**
+     * @var string The hashed password
+     */
+    #[ORM\Column(nullable: true)]
+    private ?string $password = null;
 
-    #[ORM\Column(name: 'last_name', type: 'string', length: 255, nullable: true)]
-    protected $lastName;
+    #[ORM\Column(nullable: true)]
+    private ?string $username;
 
-    #[ORM\Column(name: 'phone_number', type: 'string', length: 255, nullable: true)]
-    protected $phoneNumber;
+    #[ORM\Column(nullable: true)]
+    private ?string $firstName;
 
-    #[ORM\Column(name: 'location', type: 'string', length: 255, nullable: true)]
-    protected $location;
+    #[ORM\Column(nullable: true)]
+    private ?string $lastName;
 
-    #[ORM\Column(name: 'website', type: 'string', length: 255, nullable: true)]
-    protected $website;
+    #[ORM\Column(nullable: true)]
+    private ?string $phoneNumber;
 
-    #[ORM\Column(type: 'string', name: 'provider_id', nullable: true)]
-    protected $providerId;
+    #[ORM\Column(nullable: true)]
+    private ?string $location;
 
+    #[ORM\Column(nullable: true)]
+    private ?string $website;
 
-    public function getId(): ?int
-    {
+    #[ORM\Column(nullable: true)]
+    private ?string $providerId;
+
+    public function getId()
+    : ?int {
+
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
+    public function setEmail(string $email)
+    : static {
 
-    public function setName(mixed $name): void
-    {
-        $this->name = $name;
-    }
-
-
-    /**
-     * @return mixed
-     */
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-
-    public function setFirstName(mixed $firstName): void
-    {
-        $this->firstName = $firstName;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
-    }
-
-    public function setLastName(mixed $lastName): void
-    {
-        $this->lastName = $lastName;
-    }
-
-
-    public function getPhoneNumber(): ?string
-    {
-        return $this->phoneNumber;
-    }
-
-    public function setPhoneNumber(?string $phoneNumber): self
-    {
-        $this->phoneNumber = $phoneNumber;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * @return mixed
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
      */
-    public function getLocation()
-    {
-        return $this->location;
-    }
+    public function getUserIdentifier()
+    : string {
 
-    public function setLocation(mixed $location): void
-    {
-        $this->location = $location;
+        if (!is_null($this->username)) {
+            return $this->username;
+        }
+
+        return (string)$this->email;
     }
 
     /**
-     * @return mixed
+     * @return list<string>
+     * @see UserInterface
+     *
      */
-    public function getWebsite()
-    {
-        return $this->website;
-    }
+    public function getRoles()
+    : array {
 
-    public function setWebsite(mixed $website): void
-    {
-        $this->website = $website;
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
 
     /**
-     * @return mixed
+     * @param list<string> $roles
      */
-    public function getProviderId()
-    {
-        return $this->providerId;
+    public function setRoles(array $roles)
+    : static {
+
+        $this->roles = $roles;
+
+        return $this;
     }
 
-    public function setProviderId(mixed $providerId): void
-    {
-        $this->providerId = $providerId;
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    : void {
+
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword()
+    : string {
+
+        return $this->password;
+    }
+
+    public function setPassword(string $password)
+    : static {
+
+        $this->password = $password;
+
+        return $this;
+    }
 }
