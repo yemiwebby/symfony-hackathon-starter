@@ -1,7 +1,4 @@
 {
-    "clue/stream-filter": {
-        "version": "v1.4.0"
-    },
     "cspoo/swiftmailer-mailgun-bundle": {
         "version": "1.1.0"
     },
@@ -92,15 +89,6 @@
     "friendsofsymfony/user-bundle": {
         "version": "v2.1.2"
     },
-    "guzzlehttp/guzzle": {
-        "version": "6.3.3"
-    },
-    "guzzlehttp/promises": {
-        "version": "v1.3.1"
-    },
-    "guzzlehttp/psr7": {
-        "version": "1.4.2"
-    },
     "hwi/oauth-bundle": {
         "version": "0.6",
         "recipe": {
@@ -134,44 +122,8 @@
     "php-http/cache-plugin": {
         "version": "v1.5.0"
     },
-    "php-http/client-common": {
-        "version": "1.8.0"
-    },
-    "php-http/discovery": {
-        "version": "1.4.0"
-    },
-    "php-http/guzzle6-adapter": {
-        "version": "v1.1.1"
-    },
-    "php-http/httplug": {
-        "version": "v1.1.0"
-    },
-    "php-http/httplug-bundle": {
-        "version": "1.6",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "1.6",
-            "ref": "4655962c64e2de96c418caf576c57215711c7877"
-        }
-    },
-    "php-http/logger-plugin": {
-        "version": "v1.0.0"
-    },
-    "php-http/message": {
-        "version": "1.7.0"
-    },
-    "php-http/message-factory": {
-        "version": "v1.0.2"
-    },
     "php-http/multipart-stream-builder": {
         "version": "1.0.0"
-    },
-    "php-http/promise": {
-        "version": "v1.0.0"
-    },
-    "php-http/stopwatch-plugin": {
-        "version": "1.1.0"
     },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
@@ -182,14 +134,34 @@
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
     },
+    "phpstan/phpstan": {
+        "version": "1.10",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "5e490cc197fb6bb1ae22e5abbc531ddc633b6767"
+        }
+    },
+    "phpunit/phpunit": {
+        "version": "9.6",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "9.6",
+            "ref": "7364a21d87e658eb363c5020c072ecfdc12e2326"
+        },
+        "files": [
+            ".env.test",
+            "phpunit.xml.dist",
+            "tests/bootstrap.php"
+        ]
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
     "psr/container": {
         "version": "1.0.0"
-    },
-    "psr/http-message": {
-        "version": "1.0.1"
     },
     "psr/link": {
         "version": "1.0.0"
@@ -257,9 +229,6 @@
             "ref": "f8863cbad2f2e58c4b65fa1eac892ab189971bea"
         }
     },
-    "symfony/debug-pack": {
-        "version": "v1.0.6"
-    },
     "symfony/dependency-injection": {
         "version": "v4.1.4"
     },
@@ -317,6 +286,24 @@
     "symfony/intl": {
         "version": "v4.1.4"
     },
+    "symfony/mailer": {
+        "version": "7.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "main",
+            "version": "4.3",
+            "ref": "2bf89438209656b85b9a49238c4467bff1b1f939"
+        },
+        "files": [
+            "config/packages/mailer.yaml"
+        ]
+    },
+    "symfony/mailgun-mailer": {
+        "version": "7.0",
+        "recipe": {
+            "version": "4.4"
+        }
+    },
     "symfony/maker-bundle": {
         "version": "1.0",
         "recipe": {
@@ -341,9 +328,6 @@
     "symfony/options-resolver": {
         "version": "v4.1.4"
     },
-    "symfony/orm-pack": {
-        "version": "v1.0.5"
-    },
     "symfony/panther": {
         "version": "v0.2.0"
     },
@@ -367,9 +351,6 @@
     },
     "symfony/process": {
         "version": "v4.1.4"
-    },
-    "symfony/profiler-pack": {
-        "version": "v1.0.3"
     },
     "symfony/property-access": {
         "version": "v4.1.4"
@@ -401,9 +382,6 @@
     "symfony/serializer": {
         "version": "v4.1.4"
     },
-    "symfony/serializer-pack": {
-        "version": "v1.0.1"
-    },
     "symfony/stopwatch": {
         "version": "v4.1.4"
     },
@@ -418,9 +396,6 @@
     },
     "symfony/templating": {
         "version": "v4.1.4"
-    },
-    "symfony/test-pack": {
-        "version": "v1.0.2"
     },
     "symfony/translation": {
         "version": "3.3",
@@ -478,6 +453,9 @@
     },
     "symfony/yaml": {
         "version": "v4.1.4"
+    },
+    "twig/extra-bundle": {
+        "version": "v3.8.0"
     },
     "twig/twig": {
         "version": "v2.5.0"

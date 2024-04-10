@@ -1,14 +1,19 @@
 security:
-    encoders:
-        FOS\UserBundle\Model\UserInterface: bcrypt
+#    encoders:
+#        FOS\UserBundle\Model\UserInterface: bcrypt
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        fos_userbundle:
-            id: fos_user.user_provider.username
+       backend_users:
+          memory:
+             users:
+                john_admin: { password: '$2y$13$jxGxc ... IuqDju', roles: [ 'ROLE_ADMIN' ] }
+                jane_admin: { password: '$2y$13$PFi1I ... rGwXCZ', roles: [ 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN' ] }
+#        fos_userbundle:
+#            id: fos_user.user_provider.username
 
     firewalls:
         dev:
@@ -17,10 +22,10 @@ security:
         main:
             pattern: ^/
             form_login:
-               provider: fos_userbundle
+               provider: backend_users
                login_path: fos_user_security_login
                check_path: /login_check
-               csrf_token_generator: security.csrf.token_manager
+#               csrf_token_generator: security.csrf.token_manager
                remember_me: true
 
             remember_me:
@@ -43,7 +48,7 @@ security:
 
               oauth_user_provider:
                   service: my.oauth_aware.user_provider.service
-            anonymous: true
+#            anonymous: true
             logout:
               path: fos_user_security_logout
               target: /login

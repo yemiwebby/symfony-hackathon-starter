@@ -2,60 +2,40 @@
 
 namespace App\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity
- * @ORM\Table(name="fos_user")
- */
-class User extends BaseUser
+#[ORM\Table(name: 'fos_user')]
+#[ORM\Entity]
+class User
 {
-    /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     protected $id;
 
     public function __construct()
     {
-        parent::__construct();
     }
 
-    /**
-     * @ORM\Column(name="name", type="string", length=255, nullable=true)
-     */
+    #[ORM\Column(name: 'name', type: 'string', length: 255, nullable: true)]
     protected $name;
 
-    /**
-     * @ORM\Column(name="first_name", type="string", length=255, nullable=true)
-     */
+    #[ORM\Column(name: 'first_name', type: 'string', length: 255, nullable: true)]
     protected $firstName;
 
-    /**
-     * @ORM\Column(name="last_name", type="string", length=255, nullable=true)
-     */
+    #[ORM\Column(name: 'last_name', type: 'string', length: 255, nullable: true)]
     protected $lastName;
 
-    /**
-     * @ORM\Column(name="phone_number", type="string", length=255, nullable=true)
-     */
+    #[ORM\Column(name: 'phone_number', type: 'string', length: 255, nullable: true)]
     protected $phoneNumber;
 
-    /**
-     * @ORM\Column(name="location", type="string", length=255, nullable=true)
-     */
+    #[ORM\Column(name: 'location', type: 'string', length: 255, nullable: true)]
     protected $location;
 
-    /**
-     * @ORM\Column(name="website", type="string", length=255, nullable=true)
-     */
+    #[ORM\Column(name: 'website', type: 'string', length: 255, nullable: true)]
     protected $website;
 
-    /**
-     * @ORM\Column(type="string", name="provider_id", nullable=true)
-     */
+    #[ORM\Column(type: 'string', name: 'provider_id', nullable: true)]
     protected $providerId;
 
 
@@ -72,10 +52,7 @@ class User extends BaseUser
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
-    public function setName($name): void
+    public function setName(mixed $name): void
     {
         $this->name = $name;
     }
@@ -89,10 +66,7 @@ class User extends BaseUser
         return $this->firstName;
     }
 
-    /**
-     * @param mixed $firstName
-     */
-    public function setFirstName($firstName): void
+    public function setFirstName(mixed $firstName): void
     {
         $this->firstName = $firstName;
     }
@@ -105,10 +79,7 @@ class User extends BaseUser
         return $this->lastName;
     }
 
-    /**
-     * @param mixed $lastName
-     */
-    public function setLastName($lastName): void
+    public function setLastName(mixed $lastName): void
     {
         $this->lastName = $lastName;
     }
@@ -134,10 +105,7 @@ class User extends BaseUser
         return $this->location;
     }
 
-    /**
-     * @param mixed $location
-     */
-    public function setLocation($location): void
+    public function setLocation(mixed $location): void
     {
         $this->location = $location;
     }
@@ -150,10 +118,7 @@ class User extends BaseUser
         return $this->website;
     }
 
-    /**
-     * @param mixed $website
-     */
-    public function setWebsite($website): void
+    public function setWebsite(mixed $website): void
     {
         $this->website = $website;
     }
@@ -166,10 +131,7 @@ class User extends BaseUser
         return $this->providerId;
     }
 
-    /**
-     * @param mixed $providerId
-     */
-    public function setProviderId($providerId): void
+    public function setProviderId(mixed $providerId): void
     {
         $this->providerId = $providerId;
     }

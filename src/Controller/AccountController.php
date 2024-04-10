@@ -20,31 +20,23 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class AccountController extends AbstractController
 {
     /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
-
-    /**
      * @var \Doctrine\Common\Persistence\ObjectRepository
      */
     private $userRepository;
 
     /**
      * AccountController constructor.
-     * @param EntityManagerInterface $entityManager
      */
-    public function __construct(EntityManagerInterface $entityManager)
+    public function __construct(private readonly EntityManagerInterface $entityManager)
     {
-        $this->entityManager = $entityManager;
-        $this->userRepository = $entityManager->getRepository('App:User');
+        $this->userRepository = $this->entityManager->getRepository('App:User');
     }
 
     /**
-     * @Route("/update/profile", name="profile_update")
-     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function updateAccount(Request $request)
+    #[Route(path: '/update/profile', name: 'profile_update')]
+    public function updateAccount(Request $request): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $user = $this->userRepository->find($this->getUser()->getId());
 
@@ -55,13 +47,12 @@ class AccountController extends AbstractController
     }
 
     /**
-     * @Route("/account/password", name="change_password")
-     * @param Request $request
      * @param UserPasswordEncoderInterface $encoder
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
      */
-    public function changePassword(Request $request, UserPasswordEncoderInterface $encoder)
+    #[Route(path: '/account/password', name: 'change_password')]
+    public function changePassword(Request $request, UserPasswordEncoderInterface $encoder): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $user = $this->userRepository->find($this->getUser()->getId());
         $encoded = $encoder->encodePassword($user, $request->get('password'));
@@ -74,27 +65,23 @@ class AccountController extends AbstractController
     }
 
     /**
-     * @Route("/account/delete", name="delete_account")
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function deleteAccount(Request $request)
+    #[Route(path: '/account/delete', name: 'delete_account')]
+    public function deleteAccount(): \Symfony\Component\HttpFoundation\RedirectResponse
     {
         $user = $this->userRepository->find($this->getUser()->getId());
         $this->removeObject($user);
-
         $session = new Session();
         $session->clear();
-
         return $this->redirect('/');
     }
 
     /**
      * Update users' profile
-     * @param Request $request
-     * @param User $user
      */
-    public function updateUser(Request $request, User $user)
+    public function updateUser(Request $request, User $user): void
     {
 
         $user->setEmail($request->get('email'));
@@ -109,7 +96,7 @@ class AccountController extends AbstractController
      * Update the database
      * @param $object
      */
-    public function persistObject($object)
+    public function persistObject($object): void
     {
         $this->entityManager->persist($object);
         $this->entityManager->flush();
@@ -119,7 +106,7 @@ class AccountController extends AbstractController
      * Delete object from the database
      * @param $object
      */
-    public function removeObject($object)
+    public function removeObject($object): void
     {
         $this->entityManager->remove($object);
         $this->entityManager->flush();
