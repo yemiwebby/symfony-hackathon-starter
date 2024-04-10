@@ -1,4 +1,0 @@
-cspoo_swiftmailer_mailgun:
-    key: "key-********"
-    domain: "YOUR_DOMAIN"
-    #http_client: 'httplug.client' # Optional. Defaults to null and uses discovery to find client.
