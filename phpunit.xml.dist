@@ -15,12 +15,6 @@
         <env name="APP_SECRET" value="s$cretf0rt3st" />
         <env name="SHELL_VERBOSITY" value="-1" />
         <!-- define your env variables for the test env here -->
-
-        <!-- ###+ hwi/oauth-bundle ### -->
-        <env name="FB_ID" value=""/>
-        <env name="FB_SECRET" value=""/>
-        <!-- ###- hwi/oauth-bundle ### -->
-
         <!-- ###+ mailgun/mailgun-php ### -->
         <!-- Get your API key form https://app.mailgun.com/app/domains -->
         <env name="MAILGUN_API_KEY" value="&quot;replace_me&quot;"/>

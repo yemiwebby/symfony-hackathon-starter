@@ -1,18 +1,5 @@
 hwi_oauth:
-    # list of names of the firewalls in which this bundle is active, this setting MUST be set
-    firewall_names: [main]
-#    fosub:
-#        properties:
-#            facebook: providerId
-#            google: providerId
-#            auth0: providerId
-#            linkedin: providerId
-#            github: providerId
-#            gitlab: providerId
-#            twitter: providerId
-#            instagram: providerId
-
-    # https://github.com/hwi/HWIOAuthBundle/blob/master/Resources/doc/2-configuring_resource_owners.md
+    # https://github.com/hwi/HWIOAuthBundle/blob/master/docs/2-configuring_resource_owners.md
     resource_owners:
         facebook:
             type:                facebook
@@ -20,51 +7,5 @@ hwi_oauth:
             client_secret:       '%env(FB_SECRET)%'
             scope:               "email"
             options:
-                #display: popup
-                auth_type: rerequest
                 csrf: true
-
-        google:
-            type: google
-            client_id:  '%env(GOOGLE_ID)%'
-            client_secret: '%env(GOOGLE_SECRET)%'
-            scope: "email profile"
-
-
-        auth0:
-            type:                oauth2
-            class:               'App\Auth0ResourceOwner'
-            client_id:           "%env(AUTH0_CLIENT_ID)%"
-            client_secret:       "%env(AUTH0_CLIENT_SECRET)%"
-            base_url:            "https://%env(AUTH0_DOMAIN)%"
-            scope: "openid profile email"
-
-        twitter:
-            type: twitter
-            client_id: '%env(TWITTER_CLIENT_ID)%'
-            client_secret: '%env(TWITTER_SECRET)%'
-            options:
-                include_email: true
-
-        github:
-            type: github
-            client_id: '%env(GITHUB_CLIENT_ID)%'
-            client_secret: '%env(GITHUB_CLIENT_SECRET)%'
-            scope:
-
-        gitlab:
-            type: gitlab
-            client_id: '%env(GITLAB_CLIENT_ID)%'
-            client_secret: '%env(GITLAB_CLIENT_SECRET)%'
-
-        linkedin:
-            type:           linkedin
-            client_id:     '%env(LINKEDIN_CLIENT_ID)%'
-            client_secret:  '%env(LINKEDIN_CLIENT_SECRET)%'
-            scope:
-
-        instagram:
-            type:           instagram
-            client_id:      '%env(INSTAGRAM_CLIENT_ID)%'
-            client_secret:  '%env(INSTAGRAM_CLIENT_SECRET)%'
-            scope: "basic"
+                refresh_on_expire: true
