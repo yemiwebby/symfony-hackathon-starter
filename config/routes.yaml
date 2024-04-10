@@ -2,24 +2,24 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
-
-fos_user_profile:
-    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-    prefix: /profile
-
-fos_user_register:
-    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-    prefix: /register
-
-fos_user_resetting:
-    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-    prefix: /resetting
-
-fos_user_change_password:
-    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-    prefix: /profile
+#fos_user:
+#    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+#
+#fos_user_profile:
+#    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+#    prefix: /profile
+#
+#fos_user_register:
+#    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+#    prefix: /register
+#
+#fos_user_resetting:
+#    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+#    prefix: /resetting
+#
+#fos_user_change_password:
+#    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+#    prefix: /profile
 
 hwi_oauth_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
