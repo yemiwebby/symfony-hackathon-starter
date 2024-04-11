@@ -90,13 +90,17 @@
         "version": "v2.1.2"
     },
     "hwi/oauth-bundle": {
-        "version": "0.6",
+        "version": "2.2",
         "recipe": {
             "repo": "github.com/symfony/recipes-contrib",
-            "branch": "master",
-            "version": "0.6",
-            "ref": "20cacc9b2da49d96ea55c8a8dd31324c5be88bc9"
-        }
+            "branch": "main",
+            "version": "2.0",
+            "ref": "20154480d558409ad3eb9de3644817c81fad2268"
+        },
+        "files": [
+            "config/packages/hwi_oauth.yaml",
+            "config/routes/hwi_oauth_routing.yaml"
+        ]
     },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
