@@ -4,11 +4,12 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends AbstractController
 {
     #[Route(path: '/home', name: 'home')]
-    public function index(): \Symfony\Component\HttpFoundation\Response
+    public function index(): Response
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
@@ -17,19 +18,19 @@ class HomeController extends AbstractController
 
 
     /**
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      */
     #[Route(path: '/account', name: 'account')]
-    public function accountPage(): \Symfony\Component\HttpFoundation\Response
+    public function accountPage(): Response
     {
         return $this->render('user/account.html.twig');
     }
 
     /**
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      */
     #[Route(path: '/contact', name: 'contact')]
-    public function contactPage(): \Symfony\Component\HttpFoundation\Response
+    public function contactPage(): Response
     {
         return $this->render('contact.html.twig');
     }
