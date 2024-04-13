@@ -11,15 +11,16 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ContactController extends AbstractController
 {
     /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @return RedirectResponse
      */
     #[Route(path: '/contact/submit', name: 'submit_contact')]
-    public function submitForm(Request $request, \Swift_Mailer $mailer): \Symfony\Component\HttpFoundation\RedirectResponse
+    public function submitForm(Request $request, \Swift_Mailer $mailer): RedirectResponse
     {
         $name = $request->get('name');
         $email = $request->get('email');
