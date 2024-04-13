@@ -20,6 +20,11 @@
 #fos_user_change_password:
 #    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
 #    prefix: /profile
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
 
 hwi_oauth_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
