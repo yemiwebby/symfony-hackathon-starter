@@ -31,10 +31,12 @@
 
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('fos_user_security_login') }}"> Login </a>
+                            <a class="nav-link" href="#"> Login </a>
+                            {# <a class="nav-link" href="{{ path('fos_user_security_login') }}"> Login </a> #}
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('fos_user_registration_register') }}"> Create Account </a>
+                            <a class="nav-link" href="#"> Create Account </a>
+                            {# <a class="nav-link" href="{{ path('fos_user_registration_register') }}"> Create Account </a> #}
                         </li>
                     {% endif %}
                 </ul>
