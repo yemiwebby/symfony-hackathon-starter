@@ -8,15 +8,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class HomeController extends AbstractController
 {
-    #[Route(path: '/home', name: 'home')]
-    public function index(): Response
-    {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
-    }
-
-
     /**
      * @return Response
      */
@@ -34,5 +25,4 @@ class HomeController extends AbstractController
     {
         return $this->render('contact.html.twig');
     }
-
 }
